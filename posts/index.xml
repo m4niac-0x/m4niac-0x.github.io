@@ -1,0 +1,542 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Hex-Nihilo</title>
+        <link>https://blog.hex-nihilo.com/posts/</link>
+        <description>Recent content in Posts on Hex-Nihilo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr-fr</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate>
+        <atom:link href="https://blog.hex-nihilo.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>PowerShell EMPIRE C2</title>
+            <link>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</link>
+            <pubDate>Sat, 10 Apr 2021 22:30:07 +0200</pubDate>
+            
+            <guid>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</guid>
+            <description>Disclaimer :
+Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+N’en faites pas un usage illégal.
+  Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
+            <content type="html"><![CDATA[<hr>
+<blockquote>
+<p><strong>Disclaimer</strong> :<br>
+Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
+</blockquote>
+<hr>
+</br>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image002.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<h2 id="introduction">Introduction</h2>
+<p>Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp; Control’ de la cyber-killchain de Lockheed Martin.</p>
+<p>Empire est un framework de post-exploitation, cela signifie que son utilisation ne débute qu’après la phase d’exploitation d’une vulnérabilité et dès lors que l’auditeur détient un accès sur la machine ciblée. En outre, il permet le déploiement rapide d’un serveur distant de commande et de contrôle (C2 ou C&amp;C) pour communiquer de manière chiffrée avec des agents injectés dans des machines compromises au sein d’une infrastructure.</p>
+<p>L’utilisation d’un tel framework prend tout son intérêt dès lors qu’il est question d’automatiser des taches et d’administrer les machines compromises au fur et à mesure de la progression de l’intrusion dans le système d’information. L’architecture de l’outil est flexible de par la possibilité de créer des modules (plugins), en langage python, personnalisés aux usages spécifiques qu’il peut en être fait.</p>
+<hr>
+<h2 id="les-fonctionnalités">Les fonctionnalités</h2>
+<p>Empire cible en particulier les machines basées sur le système d’exploitation Windows de Microsoft. Il détient néanmoins quelques modules Linux que je qualifie « d’opportunité ».</p>
+<p>Outre son usage de serveur de commande et de contrôle, il est principalement utilisé pour actions suivantes :</p>
+<ul>
+<li>
+<p>Elévation de privilège :
+Il s’agit d’une action, sur un système, visant à acquérir des droits supérieurs à ceux détenus initialement. Ce mécanisme est généralement légitime, néanmoins cette technique peut être utilisée de manière frauduleuse via l’exploitation d’une vulnérabilité par un attaquant.</p>
+</li>
+<li>
+<p>Reconnaissance du réseau :
+Il s’agit habituellement de procéder à la cartographie interne d’une infrastructure informatique. Effectuée depuis l’intérieur au travers de la machine compromise, la reconnaissance peut viser un large panel dans la collecte de renseignements : machines actives, ports ouverts, écoute du trafic, etc…</p>
+</li>
+<li>
+<p>Pivoting, ou mouvements latéraux :
+Technique consistant à propager l’attaque depuis une machine compromise vers une autre située à proximité « virtuelle » (des appareils interconnectés peuvent se trouver dans des lieux physiques différents) dans le réseau.</p>
+</li>
+<li>
+<p>Collecte de données :
+Il est question de rassembler des informations, que ce soit via la reconnaissance, l’exploitation des fichiers présents sur la machine ou la pose d’un keylogger par exemple.</p>
+</li>
+</ul>
+<p>Dans tous les cas, les communications entre l’agent et le serveur C2 transitent chiffrées, à la condition d’avoir préconfiguré un certificat auto-signé. Les commandes ne sont chargées qu’en mémoire et non pas écrites sur le support physique de la cible. Cela a pour but, <em>in fine</em>, de ne laisser qu’un minimum de traces et de réduire ainsi la surface de détection par les outils de défense et de contre-mesure.</p>
+<p>Comme son nom l’indique, l’outil exécute des agents PowerShell et ne nécessite donc pas l’activation de l’exécutable local PowerShell. Cette méthode lui assure, <em>de facto</em>, une discrétion notable et une bonne interopérabilité avec le système d’exploitation Windows.</p>
+<p>Utilisable depuis un terminal en ligne de commande, Empire dispose cependant d’une interface graphique baptisée « Starkiller ». Cette dernière servira ici à illustrer la démonstration et les fonctionnalités.</p>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image004.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Voici le menu principal de Starkiller/Empire :</p>
+<ul>
+<li>
+<p><strong>Listeners</strong> : Semblable à « netcat », il permet de mettre en place un service en écoute sur le serveur C2 dans l’attente d’une connexion entrante de l’agent Empire. Ce menu contient la liste des services en écoute.</p>
+</li>
+<li>
+<p><strong>Stagers</strong> : Il s’agit de la « charge utile » (payload) chargée de créer l’agent sur la machine cible. Une fois configurée et générée, il faudra l’uploader puis l’exécuter pour établir une connexion vers le C2. Ce menu contient la liste des charges générées.</p>
+</li>
+<li>
+<p><strong>Agents</strong> : C’est dans ce menu que se trouve la liste des agents en interaction ou ayant interagi avec le C2. Il permet une vue d’ensemble du réseau administré. Les commandes et les modules sont déployés depuis cette page.</p>
+</li>
+<li>
+<p><strong>Modules</strong> : Liste des modules pouvant être utilisés, qu’il s’agisse d’outils ou d’exploits.</p>
+</li>
+<li>
+<p><strong>Credentials</strong> : Cette page agrège (de manière automatique ou non) tous les identifiants et éléments d’authentification découverts.</p>
+</li>
+<li>
+<p><strong>Reporting</strong> : Génère un rapport détaillé contenant les commandes pour chaque agent. Utile pour concevoir le livrable lors d’un audit ou pour un retour d’expérience post opération.</p>
+</li>
+</ul>
+<hr>
+<h2 id="déploiement-et-facilités-dusage">Déploiement et facilités d’usage</h2>
+<h4 id="1ère-étape-installation-et-déploiement-du-serveur-c2">1ère étape : Installation et déploiement du serveur C2</h4>
+<p>L’installation du serveur se fait en récupérant le code source depuis le Git officiel puis en exécutant le script d’installation.</p>
+<ol>
+<li>
+<p>cd /opt</p>
+</li>
+<li>
+<p>git clone <a href="https://github.com/BC-SECURITY/Empire/">https://github.com/BC-SECURITY/Empire/</a></p>
+</li>
+<li>
+<p>cd /opt/Empire</p>
+</li>
+<li>
+<p>./setup/install.sh</p>
+</li>
+</ol>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image007.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Il en est de même pour la surcouche graphique « Starkiller » :</p>
+<ol>
+<li>
+<p>cd /opt</p>
+</li>
+<li>
+<p>wget <a href="https://github.com/BC-SECURITY/Starkiller/releases/download/v1.5.1/starkiller-1.5.1.AppImage">https://github.com/BC-SECURITY/Starkiller/releases/download/v1.5.1/starkiller-1.5.1.AppImage</a></p>
+</li>
+<li>
+<p>chmod +x starkiller-1.5.1.AppImage</p>
+</li>
+</ol>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image008.png"  class="center"  style="border-radius: 8px;"  />
+
+
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image009.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Démarrage du serveur C2 :</p>
+<ol>
+<li>
+<p>cd /opt/Empire</p>
+</li>
+<li>
+<p>./empire &ndash;rest</p>
+</li>
+</ol>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image010.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Démarrage de l’UI :</p>
+<ol>
+<li>
+<p>cd /opt</p>
+</li>
+<li>
+<p>./starkiller-0.0.0.AppImage # Ajouter &ndash;no-sandbox si exécution en tant que root</p>
+</li>
+</ol>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image011.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Connexion de Starkiller au serveur Empire :</p>
+<p>Le mot de passe par défaut est « password123 »</p>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image013.jpg"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Le serveur C2 est désormais fonctionnel et l’interface interagit correctement avec son API.</p>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image015.jpg"  class="center"  style="border-radius: 8px;"  />
+
+
+<h4 id="2ème-étape-post-exploitation">2ème étape : Post-exploitation</h4>
+<p>Comme détaillé dans l’introduction, l’utilisation du C2 se fait post exploitation. Aussi, après avoir obtenu l’accès à la machine il faut créer un « listener », puis un « stager » et enfin l’uploader puis l’exécuter sur la machine compromise.</p>
+<p>Une fois l’agent actif et la connexion établie vers le C2, celui-ci apparait dans l’interface.</p>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image017.jpg"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Il est désormais possible d’interagir directement avec l’agent, soit via des commandes PowerShell (et UNIX retranscrites automatiquement) soit via des modules. Par défaut, Empire embarque de nombreux modules (injecteur mimikatz, etc…)</p>
+
+    <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image018.png"  class="center"  style="border-radius: 8px;"  />
+
+
+<blockquote>
+<p>- <em>« I am root ! »</em></p>
+</blockquote>
+<hr>
+<h2 id="les-coûts">Les coûts</h2>
+<p>S’agissant de projets open-source, le coût est nul en tant que tel. Des frais supplémentaires peuvent être à prévoir en condition d’utilisation réelle avec l’utilisation de serveurs proxy et l’hébergement d’un C2 distant.</p>
+<p>Le projet est toujours actif et la documentation officielle est de qualité.</p>
+<hr>
+<h2 id="mais-à-quoi-ça-sert-vraiment">Mais à quoi ça sert vraiment ?</h2>
+<p>Empire est une alternative libre et gratuite à d’autres C2 comme CobaltStrike par exemple.</p>
+<p>Néanmoins, d’autres solutions telles que « Covenant » ont vu le jour récemment et semblent plus prometteuses en termes de fonctionnalités.</p>
+<p>PowerShell Empire C2 est un bon outil pour une première approche de l’utilisation d’un serveur de commande et de contrôle dans une opération de cybersécurité ou lors d’un audit technique.</p>
+<hr>
+<h2 id="sources-bibliographie-et-urlographie">Sources, bibliographie et urlographie ?</h2>
+<p>Le site &amp; Git du projet « Empire » :</p>
+<ul>
+<li>
+<p><a href="https://www.powershellempire.com/">https://www.powershellempire.com/</a></p>
+</li>
+<li>
+<p><a href="https://github.com/EmpireProject/Empire">https://github.com/EmpireProject/Empire</a></p>
+</li>
+</ul>
+<p>Le Git de l’UI « Starkiller » :</p>
+<ul>
+<li><a href="https://github.com/BC-SECURITY/Starkiller">https://github.com/BC-SECURITY/Starkiller</a></li>
+</ul>
+<p>L’indispensable cheatsheet :</p>
+<ul>
+<li><a href="https://github.com/HarmJ0y/CheatSheets/blob/master/Empire.pdf">https://github.com/HarmJ0y/CheatSheets/blob/master/Empire.pdf</a></li>
+</ul>
+<p>Quelques astuces plus avancées :</p>
+<ul>
+<li><a href="https://enigma0x3.net/2015/08/26/empire-tips-and-tricks/">https://enigma0x3.net/2015/08/26/empire-tips-and-tricks/</a></li>
+</ul>
+<p>Le papier de SANS sur la détection du C2 :</p>
+<ul>
+<li><a href="https://www.sans.org/reading-room/whitepapers/incident/disrupting-empire-identifying-powershell-empire-command-control-activity-38315">https://www.sans.org/reading-room/whitepapers/incident/disrupting-empire-identifying-powershell-empire-command-control-activity-38315</a></li>
+</ul>
+<hr>
+<hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>La &#39;cyber killchain&#39;</title>
+            <link>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</link>
+            <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+            
+            <guid>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</guid>
+            <description>Disclaimer :
+Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+N’en faites pas un usage illégal.
+  Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&amp;rsquo;il était possible d&#39;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en sept étapes d&amp;rsquo;une attaque réussie : la &amp;ldquo;Cyber Kill Chain&amp;quot;.</description>
+            <content type="html"><![CDATA[<hr>
+<blockquote>
+<p><strong>Disclaimer</strong> :<br>
+Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
+</blockquote>
+<hr>
+<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d'établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&quot;.</p>
+<p><img src="https://blog.hex-nihilo.com/img/postsimg/cyberkillchain/killchain.png" alt="illustration_cyberkillchain"></p>
+<p>Dans cet article de blog, il sera question de détailler ce modèle et de proposer des principes efficaces pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
+<hr>
+<hr>
+<h1 id="1-reconnaissance">1. Reconnaissance</h1>
+<p>But recherché : <em>Trouver une faiblesse</em></p>
+<p>Première phase du modèle, et pas des moindres, puisqu&rsquo;il s&rsquo;agit de collecter un maximum d&rsquo;informations sur la cible.</p>
+<p>En premier lieu, l’attaquant entre dans une phase de recherche <strong>passive</strong> qui commence par la collecte d&rsquo;un maximum d&rsquo;informations sur la cible. Cela concerne notamment l’identification des personnalités importantes. Pour ce faire il existe de nombreuses techniques de recherches du renseignement en sources ouvertes (OSINT), que ce soit par le biais de moteurs de recherches (spécialisés ou non) ou par la consultation de registres (WHOIS, réservation de noms de domaines, offres d&rsquo;emploi, sites internet, statuts de l&rsquo;entreprise, réseaux sociaux, &hellip;).</p>
+<p>Quand l&rsquo;attaquant estime avoir collecté suffisamment d&rsquo;information, il entame une phase de reconnaissance <strong>active</strong>.<br>
+Il est désormais question de délimiter le périmètre du système d&rsquo;information (SI), ce même périmètre qui s’avère être de plus en plus « poreux » au fur et à mesure des évolutions dans la façon où les utilisateurs interagissent avec le SI, notamment via les accès « nomades » et des services hébergés. Autant de faiblesses susceptibles d’être exploitées.<br>
+L&rsquo;attaquant va rechercher les ports et services ouverts sur le réseau avec des outils de scans de ports ou de vulnérabilités. Certains de ces outils, notamment les scanners de vulnérabilités, sont susceptibles de laisser des traces.<br>
+La reconnaissance active peut alors durer de nombreux mois pour éviter d'être détecté.</p>
+<p>Se défendre contre la reconnaissance nécessite une chose fondamentale : il faut parfaitement connaitre son réseau. Il y a une différence entre ce que les gens pensent utiliser dans leur réseau et les services qui y sont réellement actifs. L’attaquant va rechercher des traces externes laissées par des outils internes qui tournent parfois à l’insu des administrateurs. Ils servent généralement à automatiser certaines taches ou pour les besoins des propriétaires de logiciels. Ces services sont autant de vulnérabilités potentielles de l’infrastructure.<br>
+Il est nécessaire pour les administrateurs de connaitre toutes les fonctionnalités et de savoir configurer correctement leurs outils. Le but étant toujours, in fine, de <strong>réduire la surface d’attaque</strong>.<br>
+Pour ce faire il est nécessaire de retirer toutes les choses qui ne sont pas ou plus utilisées et de faire faire auditer son infrastructure (pentest, redteam, etc&hellip;). Il faut attaquer son périmètre comme le ferait un adversaire réel !<br>
+Un réseau bien géré rend difficile la collecte d’informations. Cette bonne gestion passe notamment par la correction des failles.</p>
+<blockquote>
+<p><strong>Toutes les failles identifiées doivent être corrigées</strong> !</p>
+</blockquote>
+<p>Les failles volontairement ignorées sont autant d’opportunités laissées aux attaquants. Et il en va de même pour l’ouverture temporaire d’accès extérieurs sur des ressources internes protégées. Les groupes APT (Advanced Persistent Threat) maintiennent une surveillance permanente pour détecter toute exposition, même temporaire, du système informatique de leur cible.</p>
+<p>Techniquement parlant, les pots de miel (honeypots) sont d&rsquo;excellents outils qui peuvent être utilisés comme un leurre contre un agresseur potentiel. Non seulement ils détournent l&rsquo;attention des systèmes réels, mais ils révèlent aussi ce qu&rsquo;ils cherchent et parfois qui ils sont.<br>
+Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périmètre assurera le filtrage et la segmentation, tout en surveillant les scans de ports et le &lsquo;banner grabbing&rsquo;. La plupart des pare-feu de nouvelle génération (NGFW) peuvent bloquer les connexions des réseaux Tor et des proxy IP connus qui sont couramment utilisés durant cette phase.</p>
+<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l'étape suivante.</p>
+<hr>
+<hr>
+<h1 id="2-weaponization">2. Weaponization</h1>
+<p>But recherché : <em>Sélectionner une arme basée sur le résultat de la reconnaissance</em></p>
+<p>Une faiblesse sur le SI de la cible a désormais été découverte par l&rsquo;attaquant. Cette phase consiste à trouver ou développer l&rsquo;outil qui permettra de <strong>l&rsquo;exploiter</strong>.</p>
+<p>Pour les vulnérabilités les plus courantes, il peut s&rsquo;agir d&rsquo;outils accessibles au public tels que &lsquo;Metasploit Framework&rsquo;, &lsquo;exploit-db&rsquo; ou &lsquo;SEToolkit&rsquo; par exemple. Ou alors de programmes et shellcodes développés spécifiquement pour cette attaque. Tout cela dépend du contexte de l&rsquo;attaque, généralement en corrélation avec le type de cible, les moyens engagés et le niveau technique de l&rsquo;attaquant.</p>
+<p>L&rsquo;une des meilleures contre-mesure consiste à <strong>corriger les vulnérabilités</strong> du SI car la majorité des failles exploitées proviennent de serveur non patchés.</p>
+<blockquote>
+<p>Je découvre encore des systèmes critiques de grandes sociétés vulnérables à &lsquo;eternal blue&rsquo;&hellip;</p>
+</blockquote>
+<p>Il est aussi conseillé de mettre en place divers dispositifs tels que :</p>
+<ul>
+<li>les antivirus et anti-spam sur le service d&rsquo;email,</li>
+<li>l&rsquo;audit des logs,</li>
+<li>l&rsquo;IPS orienté détection des tentatives d&rsquo;exploit,</li>
+<li>&hellip;</li>
+</ul>
+<p>Ces solutions ne protègent que contre ce que nous connaissons, il faut mettre en place des mesures pour détecter les attaques qui passent au travers des mesures de sécurité. C&rsquo;est là qu&rsquo;un outil de post-infection, comme une sandbox ou un EDR (Endpoint detection and response), aidera à détecter les menaces que les mesures préventives n&rsquo;ont pas détectées.</p>
+<p>Désormais, l&rsquo;attaquant a choisi l&rsquo;outil à utiliser, mais il ne l&rsquo;a pas encore livré. La manière dont il le fait est aussi importante que le choix de l&rsquo;arme.</p>
+<hr>
+<hr>
+<h1 id="3-delivery">3. Delivery</h1>
+<p>But recherché : <em>Livrer la charge utile dans le SI</em></p>
+<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l'étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
+<p>Voici quelques exemples :<br>
+- Un site web compromis ;<br>
+- Une interaction avec une ressource du SI exposée sur internet ;<br>
+- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering&rsquo; pour obtenir un accès interne illégitime ;<br>
+- Le hameçonnage d&rsquo;un employé sur les réseaux sociaux ;<br>
+- Par support USB. L&rsquo;attaque consiste à abandonner une clé USB infectée dans l&rsquo;espoir qu&rsquo;un employé trop curieux la branche sur le SI interne.</p>
+<p>Il faut bien tenir compte du fait qu&rsquo;une entreprise peut disposer des meilleurs experts en cybersécurité, si elle ne forme pas ses employés elle s’expose à une compromission depuis le poste d’un utilisateur. Il ne faut pas négliger ces derniers et mettre en place des <strong>politiques sur les mots de passe</strong> et sur les <strong>bonnes pratiques de la SSI</strong>.</p>
+<p>Outre les mesures déjà employées dans la section <em>Weaponization</em>, d&rsquo;autres peuvent venir les compléter.<br>
+- Le filtrage web pour empêcher le téléchargement des payloads;<br>
+- Une politique de sécurité sur les supports USB et de gestion stricte des droits des utilisateurs sur leur poste;<br>
+- Le filtrage DNS;<br>
+- L&rsquo;inspection des paquets chiffrés en SSL.</p>
+<p>Une fois l&rsquo;arme délivrée, l&rsquo;attaquant doit désormais la déclencher.</p>
+<hr>
+<hr>
+<h1 id="4-exploitation">4. Exploitation</h1>
+<p>But recherché : <em>Déclencher le code malveillant et exploiter la vulnérabilité</em></p>
+<p>C&rsquo;est à ce stade de l&rsquo;attaque que l&rsquo;on parle <em>d&rsquo;injection SQL</em>, <em>buffer overflow</em>, <em>malware</em>, etc&hellip;<br>
+Rien n&rsquo;a réussi à empêcher la charge d&rsquo;entrer dans le SI. Cette phase est critique car peu de choses désormais ne permettent de stopper son exécution.</p>
+<p>Une fois l&rsquo;exploitation mise en œuvre, la machine ciblée est infectée et devient ce que l&rsquo;on appelle le <strong>&lsquo;patient zéro&rsquo;</strong>. La ligne de défense est franchie, seule une sandbox ou un programme d&rsquo;analyse comportementale en temps réel est capable de détecter l&rsquo;intrusion.</p>
+<p>Après avoir tiré parti d&rsquo;une faiblesse dans une application ou un système d&rsquo;exploitation, l&rsquo;attaquant à maintenant obtenu un accès au travers d&rsquo;une brèche mais l&rsquo;attaque n&rsquo;est pas terminée&hellip;</p>
+<hr>
+<hr>
+<h1 id="5-installation">5. Installation</h1>
+<p>But recherché : <em>&lsquo;Planter la tente&rsquo; et conserver un accès persistant</em></p>
+<p>Exploiter une faille et gagner l&rsquo;accès c&rsquo;est bien, mais faire en sorte d&rsquo;y rester c&rsquo;est mieux.
+Dans cette phase l&rsquo;attaquant (ou le code exécutable) va faire en sorte de conserver un accès <strong>persistant</strong> dans la machine infectée (et plus tard dans le SI en entier).<br>
+Cela se fait par la mise en place d&rsquo;une porte dérobée (backdoor) permettant de regagner l&rsquo;accès automatiquement même après redémarrage de la machine par exemple (taches planifiées, dll hijacking, modification du registre&hellip;).</p>
+<p>Une fois arrivé à ce stade de l&rsquo;attaque, les opportunités de défense sont très limitées. Tout repose principalement dans la détection de flux suspects et de processus illégitimes sur les machines.</p>
+<hr>
+<hr>
+<h1 id="6-command--control">6. Command &amp; Control</h1>
+<p>But recherché : <em>Permettre le contrôle distant et progresser à travers le SI</em></p>
+<p>C&rsquo;est au cours de cette étape que l&rsquo;attaquant s&rsquo;efforcera d&rsquo;obtenir ce que l&rsquo;on appelle une <strong>élévation de privilèges</strong>, consistant à s&rsquo;octroyer plus de droits sur système qu&rsquo;il n&rsquo;en a au départ.</p>
+<blockquote>
+<p>Le saint graal ce sont les droits d&rsquo;administrateur (ou &lsquo;root&rsquo;).</p>
+</blockquote>
+<p>La meilleure contremesure consiste à ne pas attribuer de droits permissifs à tous les utilisateurs. Un compte ne doit détenir que les droits dont il a besoin.</p>
+<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l'étape précédente, son accès est persistant.<br>
+Il va maintenant tenter d’installer des outils lui permettant de gagner des accès ou d’automatiser des taches. Pour ce faire il va généralement essayer de <strong>contacter un serveur externe</strong> via un nom de domaine. Celui-ci est potentiellement identifiable à l’aide de bases connues, pour peu que l’on surveille les flux.</p>
+<p>Encore et toujours, l’application des correctifs de sécurité et une action stratégique dans la défense de l’infrastructure, tant dans son périmètre extérieur que pour les systèmes qui le compose.</p>
+<p>Pour atteindre son objectif, l’adversaire devra peut-être avoir besoin de se déplacer sur le réseau, cela s’appelle un <strong>&lsquo;mouvement latéral&rsquo;</strong> ou un <strong>&lsquo;pivot&rsquo;</strong>. La meilleure barrière réside dans la bonne gestion du réseau notamment dans sa segmentation. Certaines zones et certaines machines ne doivent pas se côtoyer ni même être accessible l’une de l’autre, de manière logique ou physique.</p>
+<p>Pour la post-détection, la recherche active d&rsquo;IOC (Indicator Of Compromission) dans le &lsquo;flux réseau&rsquo;, le comportement des systèmes ou l&rsquo;analyse des fichiers est un bon moyen d&rsquo;y parvenir.</p>
+<blockquote>
+<p>En résumé : on <strong>isole</strong> par la <em>segmentation</em>, on <strong>protège</strong> par <em>l&rsquo;interdiction</em> et on <strong>détecte</strong> les <em>indicateurs de compromission</em>.</p>
+</blockquote>
+<p>Ici encore, l&rsquo;inspection des paquets SSL apporte une aide significative.</p>
+<hr>
+<hr>
+<h1 id="7-actions-on-objectives">7. Actions on Objectives</h1>
+<p>But recherché : <em>C&rsquo;est le but recherché</em></p>
+<p>Si aucune mesure n’a permis de mettre un terme à l’attaque, l’intru est maintenant en capacité d’atteindre son but.<br>
+D’après des études statistiques effectuées par « Verizon ». L’attaquant peut rester <strong>des mois dans un système d’information avant d’être détecté</strong> !<br>
+Il détient à ce stade toute latitude pour exploiter le système et y commettre son but recherché. Il peut s’agir :</p>
+<ul>
+<li>d’espionnage,</li>
+<li>de modifications des données,</li>
+<li>de <em>leak</em> ou d&rsquo;exfiltration des données,</li>
+<li>de neutralisation,</li>
+<li>de chantage,</li>
+<li>du déploiement d&rsquo;un ransomware dans le but de demander une rançon,</li>
+<li>etc&hellip; .</li>
+</ul>
+<p>L’attaquant aura potentiellement déjà eu le temps de compromettre de nombreuses zones, il ne restera alors que la restauration de sauvegardes pour sauver l’infrastructure. Il est alors <strong>indispensable</strong> de mettre en amont une politique de sauvegarde résiliente à ces événements. Les sauvegardes doivent être conservées <strong>en dehors du système informatique</strong> et doivent demeurer <strong>inatteignables</strong>.</p>
+<hr>
+<p>J&rsquo;espère que cet article a plu, n&rsquo;hésitez pas à le partager sur vos réseaux et à le commenter ! =)</p>
+<hr>
+<hr>
+<p><em>sources</em> :</p>
+<ul>
+<li><a href="https://youtu.be/bDJb8WOJYdA">https://youtu.be/bDJb8WOJYdA</a> (USENIX Enigma 2016 - NSA TAO Chief on Disrupting Nation State Hackers)</li>
+<li><a href="https://thecisoperspective.com/index.php/2020/03/27/breaking-the-kill-chain-a-defensive-approach/">https://thecisoperspective.com/index.php/2020/03/27/breaking-the-kill-chain-a-defensive-approach/</a></li>
+</ul>
+<hr>
+<hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Le Markdown</title>
+            <link>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</link>
+            <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+            
+            <guid>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</guid>
+            <description>Premier article de ce blog !
+J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
+Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&amp;rsquo;en servir de recueil d’informations en même temps ;)</description>
+            <content type="html"><![CDATA[<p>Premier article de ce blog !</p>
+<p>J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage <strong>Markdown</strong>. Ce langage même qui me sert a rédiger ce post !<br>
+Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&rsquo;en servir de recueil d’informations en même temps ;)</p>
+<hr>
+<h2 id="quest-ce-que-le-markdown-">Qu’est-ce que le Markdown ?</h2>
+<p>Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&hellip;<br>
+Les extensions de fichier sont <em>'.md&rsquo;</em> et <em>'.markdown&rsquo;</em>.<br>
+En outre, il est question d’utiliser des combinaisons de caractères pour transformer le texte. Comme <code>*italique*</code> et <code>**gras**</code> pour écrire : <em>“Le <strong>gras</strong> c’est la vie…”</em> par exemple.<br>
+J’imagine que vous avez compris un peu l’idée. Passons aux détails et tout deviendra plus clair !</p>
+<p>Vous pouvez utiliser le caractère <em>underscore</em> <code>(_)</code> ou <em>étoile</em> <code>*</code> indifféremment. C’est surtout une question de clarté du texte brut. Personnellement j’ai le reflexe d’utiliser <code>*</code> car je me sers souvent de <code>_</code> dans mes notes.<br>
+C&rsquo;est parti !</p>
+<hr>
+<h2 id="laccentuation">L&rsquo;accentuation</h2>
+<p><em>Italique</em> = <code>*Italique*</code><br>
+<strong>Gras</strong> = <code>**Gras**</code><br>
+<em><strong>Italique &amp; Gras</strong></em> = <code>***Italique &amp; Gras***</code> ou <code>_**Italique &amp; Gras**_</code> peu importe.<br>
+<del>Barré</del> = <code>~~Barré~~</code></p>
+<hr>
+<h2 id="les-paragraphes">Les paragraphes</h2>
+<h1 id="p1">P1</h1>
+<h2 id="p2">P2</h2>
+<h3 id="p3">P3</h3>
+<h4 id="p4">P4</h4>
+<h5 id="p5">P5</h5>
+<h6 id="p6">P6</h6>
+<pre><code># P1 (souligné)
+## P2
+### P3
+#### P4
+##### P5
+###### P6
+</code></pre><p>La séparation entre deux paragraphes ou blocs de texte se fait <strong>en laissant une ligne vide entre eux</strong>.<br>
+Pour <strong>retourner à la ligne</strong> il ne suffit pas de faire &lsquo;entrée&rsquo;, il faut aussi laisser <strong>deux espaces</strong> à la fin de la ligne précédente !</p>
+<hr>
+<h2 id="ecrire-du-code">Ecrire du code</h2>
+<p>Markdown offre la possibilité d'écrire du code de manière à ce qu&rsquo;il soit clairement identifié et non interprété.
+Il suffit pour cela de le placer entre des <em>accents graves</em> <code>`</code> généralement AltGr+7 sur votre clavier.</p>
+<p><code>Code</code> = <code>`Code`</code></p>
+<p>Avec 3 <code>`</code> succincts vous pouvez créer des blocs de code et même préciser de quel langage il s&rsquo;agit pour la colorisation ! Pour indiquer le langage utilisé il suffit de l'écrire après les 3 premiers <code>`</code> du bloc.<br>
+Pour incorporer les <code>```</code> dans d&rsquo;autres (en mode poupées russes) il faut ajouter un <code>`</code> à chaque itération.</p>
+<p>Ainsi, ce bout de code en C :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">int</span> pipefd[<span style="color:#ae81ff">2</span>]); 
+</code></pre></div><p>s'écrit :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">```c
+#include &lt;unistd.h&gt;
+int pipe(int pipefd[2]); 
+```
+</code></pre></div><p>Cela fonctionne aussi avec <code>bash</code>, <code>go</code>, <code>js</code>, etc&hellip;</p>
+<hr>
+<h2 id="les-listes">Les listes</h2>
+<p>Il faut sauter une ligne avant la liste. Puis utiliser <code>*</code> ou <code>+</code> ou <code>-</code> et l&rsquo;indentation.</p>
+<ul>
+<li>1ère ligne</li>
+<li>2ème ligne
+<ul>
+<li>1ère ligne sous la 2ème
+<ul>
+<li>etc&hellip; etc&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">*</span> 1ère ligne
+<span style="color:#66d9ef">*</span> 2ème ligne
+	<span style="color:#66d9ef">*</span> 1ère ligne sous la 2ème
+		<span style="color:#66d9ef">*</span> etc... etc...
+</code></pre></div><p>Même concept pour les listes numérotées :</p>
+<ol>
+<li>1ère ligne</li>
+<li>2ème ligne
+<ol>
+<li>1ère ligne sous la 2ème
+<ol>
+<li>etc&hellip; etc&hellip;</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> 1ère ligne
+<span style="color:#66d9ef">2.</span> 2ème ligne
+	<span style="color:#66d9ef">1.</span> 1ère ligne sous la 2ème
+		<span style="color:#66d9ef">1.</span> etc... etc...
+</code></pre></div><p>Et pour les &lsquo;checklists&rsquo; :</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Élément de liste coché</li>
+<li><input disabled="" type="checkbox"> Élément de liste</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [x]</span> Élément de liste coché
+<span style="color:#66d9ef">- [ ]</span> Élément de liste
+</code></pre></div><p>Ça suit toujours ?! Alors on attaque les trucs chiants&hellip;</p>
+<hr>
+<h2 id="les-tableaux">Les tableaux</h2>
+<p>Bon&hellip; un tableau c&rsquo;est des <em>pipes</em> <code>|</code>, des <em>tirets</em> <code>-</code>, et des <em>deux-points</em> <code>:</code>. Peu importe les espaces et le fait que le tableau ressemble vraiment à un tableau dans le code brut.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Colonne 1</th>
+<th align="center">Colonne 2</th>
+<th align="right">Colonne 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Ligne 1</td>
+<td align="center">Ligne 1</td>
+<td align="right">Ligne 1</td>
+</tr>
+<tr>
+<td align="left">Alignée à gauche</td>
+<td align="center">Centré</td>
+<td align="right">Alignée à droite</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">| Colonne 1        |     Colonne 2     |        Colonne 3 |        Colonne 4 |
+| :--------------- | :---------------: | ---------------: | ---------------- |
+| Ligne 1          |       Ligne 1     |          Ligne 1 | Ligne 1          |
+| Alignée à gauche |       Centré      | Alignée à droite | Sans alignement  |
+</code></pre></div><p>Mais ça marche aussi comme ça :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">|Colonne 1|Colonne 2|Colonne 3|Colonne 4
+|:-|:-:|-:|-
+|Ligne 1|Ligne 1|Ligne 1|Ligne 1
+|Alignée à gauche|Centré|Alignée à droite|Sans alignement
+</code></pre></div><hr>
+<h2 id="les-hyperliens-et-les-images">Les hyperliens et les images</h2>
+<h4 id="pour-créer-un-lien-">Pour créer un lien :</h4>
+<p><a href="https://twitter.com/m4niac_0x" title="Texte à afficher au passage de souris">Exemple de lien</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[<span style="color:#f92672">Exemple de lien</span>](<span style="color:#a6e22e">URL_de_mon_lien &#34;Texte à afficher au passage de souris&#34;</span>)
+</code></pre></div><p>Le texte à afficher par la souris est optionnel.</p>
+<h4 id="pour-incorporer-une-image-">Pour incorporer une image :</h4>
+<p><img src="https://blog.hex-nihilo.com/img/postsimg//markdown/md.jpg" alt="Logo Markdown" title="Texte à afficher au passage de souris"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Texte en cas de problème d&#39;affichage</span>](<span style="color:#a6e22e">url_de_mon_image &#34;Texte à afficher au passage de souris&#34;</span>)
+</code></pre></div><p>Le lien peut aussi bien être une URL qu&rsquo;un chemin local du systeme de fichiers (absolu ou relatif).<br>
+Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
+<hr>
+<h2 id="divers">Divers</h2>
+<ul>
+<li>
+<p>Il est possible d&rsquo;incorporer du HTML dans le Markdown.</p>
+</li>
+<li>
+<p>Vous pouvez faire des citations avec <code>&gt;</code>.</p>
+</li>
+</ul>
+<blockquote>
+<p><em>“Le <strong>gras</strong> c’est la vie…”</em><br>
+&ndash; Karadoc,  Livre II - Corpore sano</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">*“Le **gras** c’est la vie…”*  
+</span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">-- Karadoc,  Livre II - Corpore sano
+</span></code></pre></div><ul>
+<li>Vous pouvez utiliser des séparateurs comme je l&rsquo;ai fait tout au long de cette article avec <code>***</code>, <code>---</code>, <code>___</code></li>
+<li>Il n&rsquo;est, à priori, pas possible de <u>souligner</u> autrement qu&rsquo;en utilisant HTML :(</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;u&gt;souligner&lt;/u&gt;
+</code></pre></div><hr>
+<p>Voilà qui est fait !<br>
+J&rsquo;espère que ce premier article vous aura été utile !</p>
+<hr>
+<hr>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

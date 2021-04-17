@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Maniac ">
+<meta name="description" content="Cyberattaques : Modélisation et contre-mesures" />
+<meta name="keywords" content="hex-nihilo , blog , informatique , cybersecurite , linux, apt, ssi, blueteam" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/" />
+
+
+    <title>
+        
+            La &#39;cyber killchain&#39; :: Hex-Nihilo  — Un blog d&#39;informatique avancée &#39;ex nihilo&#39;
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://blog.hex-nihilo.com/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://blog.hex-nihilo.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://blog.hex-nihilo.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://blog.hex-nihilo.com/favicon-16x16.png">
+    <link rel="manifest" href="https://blog.hex-nihilo.com/site.webmanifest">
+    <link rel="mask-icon" href="https://blog.hex-nihilo.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://blog.hex-nihilo.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="La &#39;cyber killchain&#39;">
+<meta itemprop="description" content="Cyberattaques : Modélisation et contre-mesures">
+<meta itemprop="datePublished" content="2020-11-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-11-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1922">
+<meta itemprop="image" content="https://blog.hex-nihilo.com/"/>
+
+
+
+<meta itemprop="keywords" content="apt,ssi,blueteam," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.hex-nihilo.com/"/>
+
+<meta name="twitter:title" content="La &#39;cyber killchain&#39;"/>
+<meta name="twitter:description" content="Cyberattaques : Modélisation et contre-mesures"/>
+
+
+
+
+
+
+    <meta property="article:section" content="Cybersécurité" />
+
+
+
+    <meta property="article:published_time" content="2020-11-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://blog.hex-nihilo.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;$</span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#499EFF;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://blog.hex-nihilo.com/about/">&gt; cat ./profile</a></li><li><a href="https://blog.hex-nihilo.com/tags/">&gt; grep Tags</a></li><li><a href="https://blog.hex-nihilo.com/posts/">&gt; ls -l Posts/</a></li><li><a href="https://blog.hex-nihilo.com/categories/">&gt; ls Categories/</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        10 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/">La &lsquo;cyber killchain&rsquo;</a>
+      </h1>
+
+      
+        <div class="post-excerpt">Cyberattaques : Modélisation et contre-mesures</div>
+      
+
+      
+
+      <div class="post-content">
+        <hr>
+<blockquote>
+<p><strong>Disclaimer</strong> :<br>
+Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
+</blockquote>
+<hr>
+<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d'établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&quot;.</p>
+<p><img src="https://blog.hex-nihilo.com/img/postsimg/cyberkillchain/killchain.png" alt="illustration_cyberkillchain"></p>
+<p>Dans cet article de blog, il sera question de détailler ce modèle et de proposer des principes efficaces pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
+<hr>
+<hr>
+<h1 id="1-reconnaissance">1. Reconnaissance</h1>
+<p>But recherché : <em>Trouver une faiblesse</em></p>
+<p>Première phase du modèle, et pas des moindres, puisqu&rsquo;il s&rsquo;agit de collecter un maximum d&rsquo;informations sur la cible.</p>
+<p>En premier lieu, l’attaquant entre dans une phase de recherche <strong>passive</strong> qui commence par la collecte d&rsquo;un maximum d&rsquo;informations sur la cible. Cela concerne notamment l’identification des personnalités importantes. Pour ce faire il existe de nombreuses techniques de recherches du renseignement en sources ouvertes (OSINT), que ce soit par le biais de moteurs de recherches (spécialisés ou non) ou par la consultation de registres (WHOIS, réservation de noms de domaines, offres d&rsquo;emploi, sites internet, statuts de l&rsquo;entreprise, réseaux sociaux, &hellip;).</p>
+<p>Quand l&rsquo;attaquant estime avoir collecté suffisamment d&rsquo;information, il entame une phase de reconnaissance <strong>active</strong>.<br>
+Il est désormais question de délimiter le périmètre du système d&rsquo;information (SI), ce même périmètre qui s’avère être de plus en plus « poreux » au fur et à mesure des évolutions dans la façon où les utilisateurs interagissent avec le SI, notamment via les accès « nomades » et des services hébergés. Autant de faiblesses susceptibles d’être exploitées.<br>
+L&rsquo;attaquant va rechercher les ports et services ouverts sur le réseau avec des outils de scans de ports ou de vulnérabilités. Certains de ces outils, notamment les scanners de vulnérabilités, sont susceptibles de laisser des traces.<br>
+La reconnaissance active peut alors durer de nombreux mois pour éviter d'être détecté.</p>
+<p>Se défendre contre la reconnaissance nécessite une chose fondamentale : il faut parfaitement connaitre son réseau. Il y a une différence entre ce que les gens pensent utiliser dans leur réseau et les services qui y sont réellement actifs. L’attaquant va rechercher des traces externes laissées par des outils internes qui tournent parfois à l’insu des administrateurs. Ils servent généralement à automatiser certaines taches ou pour les besoins des propriétaires de logiciels. Ces services sont autant de vulnérabilités potentielles de l’infrastructure.<br>
+Il est nécessaire pour les administrateurs de connaitre toutes les fonctionnalités et de savoir configurer correctement leurs outils. Le but étant toujours, in fine, de <strong>réduire la surface d’attaque</strong>.<br>
+Pour ce faire il est nécessaire de retirer toutes les choses qui ne sont pas ou plus utilisées et de faire faire auditer son infrastructure (pentest, redteam, etc&hellip;). Il faut attaquer son périmètre comme le ferait un adversaire réel !<br>
+Un réseau bien géré rend difficile la collecte d’informations. Cette bonne gestion passe notamment par la correction des failles.</p>
+<blockquote>
+<p><strong>Toutes les failles identifiées doivent être corrigées</strong> !</p>
+</blockquote>
+<p>Les failles volontairement ignorées sont autant d’opportunités laissées aux attaquants. Et il en va de même pour l’ouverture temporaire d’accès extérieurs sur des ressources internes protégées. Les groupes APT (Advanced Persistent Threat) maintiennent une surveillance permanente pour détecter toute exposition, même temporaire, du système informatique de leur cible.</p>
+<p>Techniquement parlant, les pots de miel (honeypots) sont d&rsquo;excellents outils qui peuvent être utilisés comme un leurre contre un agresseur potentiel. Non seulement ils détournent l&rsquo;attention des systèmes réels, mais ils révèlent aussi ce qu&rsquo;ils cherchent et parfois qui ils sont.<br>
+Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périmètre assurera le filtrage et la segmentation, tout en surveillant les scans de ports et le &lsquo;banner grabbing&rsquo;. La plupart des pare-feu de nouvelle génération (NGFW) peuvent bloquer les connexions des réseaux Tor et des proxy IP connus qui sont couramment utilisés durant cette phase.</p>
+<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l'étape suivante.</p>
+<hr>
+<hr>
+<h1 id="2-weaponization">2. Weaponization</h1>
+<p>But recherché : <em>Sélectionner une arme basée sur le résultat de la reconnaissance</em></p>
+<p>Une faiblesse sur le SI de la cible a désormais été découverte par l&rsquo;attaquant. Cette phase consiste à trouver ou développer l&rsquo;outil qui permettra de <strong>l&rsquo;exploiter</strong>.</p>
+<p>Pour les vulnérabilités les plus courantes, il peut s&rsquo;agir d&rsquo;outils accessibles au public tels que &lsquo;Metasploit Framework&rsquo;, &lsquo;exploit-db&rsquo; ou &lsquo;SEToolkit&rsquo; par exemple. Ou alors de programmes et shellcodes développés spécifiquement pour cette attaque. Tout cela dépend du contexte de l&rsquo;attaque, généralement en corrélation avec le type de cible, les moyens engagés et le niveau technique de l&rsquo;attaquant.</p>
+<p>L&rsquo;une des meilleures contre-mesure consiste à <strong>corriger les vulnérabilités</strong> du SI car la majorité des failles exploitées proviennent de serveur non patchés.</p>
+<blockquote>
+<p>Je découvre encore des systèmes critiques de grandes sociétés vulnérables à &lsquo;eternal blue&rsquo;&hellip;</p>
+</blockquote>
+<p>Il est aussi conseillé de mettre en place divers dispositifs tels que :</p>
+<ul>
+<li>les antivirus et anti-spam sur le service d&rsquo;email,</li>
+<li>l&rsquo;audit des logs,</li>
+<li>l&rsquo;IPS orienté détection des tentatives d&rsquo;exploit,</li>
+<li>&hellip;</li>
+</ul>
+<p>Ces solutions ne protègent que contre ce que nous connaissons, il faut mettre en place des mesures pour détecter les attaques qui passent au travers des mesures de sécurité. C&rsquo;est là qu&rsquo;un outil de post-infection, comme une sandbox ou un EDR (Endpoint detection and response), aidera à détecter les menaces que les mesures préventives n&rsquo;ont pas détectées.</p>
+<p>Désormais, l&rsquo;attaquant a choisi l&rsquo;outil à utiliser, mais il ne l&rsquo;a pas encore livré. La manière dont il le fait est aussi importante que le choix de l&rsquo;arme.</p>
+<hr>
+<hr>
+<h1 id="3-delivery">3. Delivery</h1>
+<p>But recherché : <em>Livrer la charge utile dans le SI</em></p>
+<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l'étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
+<p>Voici quelques exemples :<br>
+- Un site web compromis ;<br>
+- Une interaction avec une ressource du SI exposée sur internet ;<br>
+- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering&rsquo; pour obtenir un accès interne illégitime ;<br>
+- Le hameçonnage d&rsquo;un employé sur les réseaux sociaux ;<br>
+- Par support USB. L&rsquo;attaque consiste à abandonner une clé USB infectée dans l&rsquo;espoir qu&rsquo;un employé trop curieux la branche sur le SI interne.</p>
+<p>Il faut bien tenir compte du fait qu&rsquo;une entreprise peut disposer des meilleurs experts en cybersécurité, si elle ne forme pas ses employés elle s’expose à une compromission depuis le poste d’un utilisateur. Il ne faut pas négliger ces derniers et mettre en place des <strong>politiques sur les mots de passe</strong> et sur les <strong>bonnes pratiques de la SSI</strong>.</p>
+<p>Outre les mesures déjà employées dans la section <em>Weaponization</em>, d&rsquo;autres peuvent venir les compléter.<br>
+- Le filtrage web pour empêcher le téléchargement des payloads;<br>
+- Une politique de sécurité sur les supports USB et de gestion stricte des droits des utilisateurs sur leur poste;<br>
+- Le filtrage DNS;<br>
+- L&rsquo;inspection des paquets chiffrés en SSL.</p>
+<p>Une fois l&rsquo;arme délivrée, l&rsquo;attaquant doit désormais la déclencher.</p>
+<hr>
+<hr>
+<h1 id="4-exploitation">4. Exploitation</h1>
+<p>But recherché : <em>Déclencher le code malveillant et exploiter la vulnérabilité</em></p>
+<p>C&rsquo;est à ce stade de l&rsquo;attaque que l&rsquo;on parle <em>d&rsquo;injection SQL</em>, <em>buffer overflow</em>, <em>malware</em>, etc&hellip;<br>
+Rien n&rsquo;a réussi à empêcher la charge d&rsquo;entrer dans le SI. Cette phase est critique car peu de choses désormais ne permettent de stopper son exécution.</p>
+<p>Une fois l&rsquo;exploitation mise en œuvre, la machine ciblée est infectée et devient ce que l&rsquo;on appelle le <strong>&lsquo;patient zéro&rsquo;</strong>. La ligne de défense est franchie, seule une sandbox ou un programme d&rsquo;analyse comportementale en temps réel est capable de détecter l&rsquo;intrusion.</p>
+<p>Après avoir tiré parti d&rsquo;une faiblesse dans une application ou un système d&rsquo;exploitation, l&rsquo;attaquant à maintenant obtenu un accès au travers d&rsquo;une brèche mais l&rsquo;attaque n&rsquo;est pas terminée&hellip;</p>
+<hr>
+<hr>
+<h1 id="5-installation">5. Installation</h1>
+<p>But recherché : <em>&lsquo;Planter la tente&rsquo; et conserver un accès persistant</em></p>
+<p>Exploiter une faille et gagner l&rsquo;accès c&rsquo;est bien, mais faire en sorte d&rsquo;y rester c&rsquo;est mieux.
+Dans cette phase l&rsquo;attaquant (ou le code exécutable) va faire en sorte de conserver un accès <strong>persistant</strong> dans la machine infectée (et plus tard dans le SI en entier).<br>
+Cela se fait par la mise en place d&rsquo;une porte dérobée (backdoor) permettant de regagner l&rsquo;accès automatiquement même après redémarrage de la machine par exemple (taches planifiées, dll hijacking, modification du registre&hellip;).</p>
+<p>Une fois arrivé à ce stade de l&rsquo;attaque, les opportunités de défense sont très limitées. Tout repose principalement dans la détection de flux suspects et de processus illégitimes sur les machines.</p>
+<hr>
+<hr>
+<h1 id="6-command--control">6. Command &amp; Control</h1>
+<p>But recherché : <em>Permettre le contrôle distant et progresser à travers le SI</em></p>
+<p>C&rsquo;est au cours de cette étape que l&rsquo;attaquant s&rsquo;efforcera d&rsquo;obtenir ce que l&rsquo;on appelle une <strong>élévation de privilèges</strong>, consistant à s&rsquo;octroyer plus de droits sur système qu&rsquo;il n&rsquo;en a au départ.</p>
+<blockquote>
+<p>Le saint graal ce sont les droits d&rsquo;administrateur (ou &lsquo;root&rsquo;).</p>
+</blockquote>
+<p>La meilleure contremesure consiste à ne pas attribuer de droits permissifs à tous les utilisateurs. Un compte ne doit détenir que les droits dont il a besoin.</p>
+<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l'étape précédente, son accès est persistant.<br>
+Il va maintenant tenter d’installer des outils lui permettant de gagner des accès ou d’automatiser des taches. Pour ce faire il va généralement essayer de <strong>contacter un serveur externe</strong> via un nom de domaine. Celui-ci est potentiellement identifiable à l’aide de bases connues, pour peu que l’on surveille les flux.</p>
+<p>Encore et toujours, l’application des correctifs de sécurité et une action stratégique dans la défense de l’infrastructure, tant dans son périmètre extérieur que pour les systèmes qui le compose.</p>
+<p>Pour atteindre son objectif, l’adversaire devra peut-être avoir besoin de se déplacer sur le réseau, cela s’appelle un <strong>&lsquo;mouvement latéral&rsquo;</strong> ou un <strong>&lsquo;pivot&rsquo;</strong>. La meilleure barrière réside dans la bonne gestion du réseau notamment dans sa segmentation. Certaines zones et certaines machines ne doivent pas se côtoyer ni même être accessible l’une de l’autre, de manière logique ou physique.</p>
+<p>Pour la post-détection, la recherche active d&rsquo;IOC (Indicator Of Compromission) dans le &lsquo;flux réseau&rsquo;, le comportement des systèmes ou l&rsquo;analyse des fichiers est un bon moyen d&rsquo;y parvenir.</p>
+<blockquote>
+<p>En résumé : on <strong>isole</strong> par la <em>segmentation</em>, on <strong>protège</strong> par <em>l&rsquo;interdiction</em> et on <strong>détecte</strong> les <em>indicateurs de compromission</em>.</p>
+</blockquote>
+<p>Ici encore, l&rsquo;inspection des paquets SSL apporte une aide significative.</p>
+<hr>
+<hr>
+<h1 id="7-actions-on-objectives">7. Actions on Objectives</h1>
+<p>But recherché : <em>C&rsquo;est le but recherché</em></p>
+<p>Si aucune mesure n’a permis de mettre un terme à l’attaque, l’intru est maintenant en capacité d’atteindre son but.<br>
+D’après des études statistiques effectuées par « Verizon ». L’attaquant peut rester <strong>des mois dans un système d’information avant d’être détecté</strong> !<br>
+Il détient à ce stade toute latitude pour exploiter le système et y commettre son but recherché. Il peut s’agir :</p>
+<ul>
+<li>d’espionnage,</li>
+<li>de modifications des données,</li>
+<li>de <em>leak</em> ou d&rsquo;exfiltration des données,</li>
+<li>de neutralisation,</li>
+<li>de chantage,</li>
+<li>du déploiement d&rsquo;un ransomware dans le but de demander une rançon,</li>
+<li>etc&hellip; .</li>
+</ul>
+<p>L’attaquant aura potentiellement déjà eu le temps de compromettre de nombreuses zones, il ne restera alors que la restauration de sauvegardes pour sauver l’infrastructure. Il est alors <strong>indispensable</strong> de mettre en amont une politique de sauvegarde résiliente à ces événements. Les sauvegardes doivent être conservées <strong>en dehors du système informatique</strong> et doivent demeurer <strong>inatteignables</strong>.</p>
+<hr>
+<p>J&rsquo;espère que cet article a plu, n&rsquo;hésitez pas à le partager sur vos réseaux et à le commenter ! =)</p>
+<hr>
+<hr>
+<p><em>sources</em> :</p>
+<ul>
+<li><a href="https://youtu.be/bDJb8WOJYdA">https://youtu.be/bDJb8WOJYdA</a> (USENIX Enigma 2016 - NSA TAO Chief on Disrupting Nation State Hackers)</li>
+<li><a href="https://thecisoperspective.com/index.php/2020/03/27/breaking-the-kill-chain-a-defensive-approach/">https://thecisoperspective.com/index.php/2020/03/27/breaking-the-kill-chain-a-defensive-approach/</a></li>
+</ul>
+<hr>
+<hr>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://blog.hex-nihilo.com/tags/apt/">apt</a></span>
+        <span class="tag"><a href="https://blog.hex-nihilo.com/tags/ssi/">ssi</a></span>
+        <span class="tag"><a href="https://blog.hex-nihilo.com/tags/blueteam/">blueteam</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://blog.hex-nihilo.com/categories/cybers%C3%A9curit%C3%A9/">Cybersécurité</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1922 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-11-21 01:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=La%20%27cyber%20killchain%27&amp;caption=La%20%27cyber%20killchain%27&amp;canonicalUrl=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=La%20%27cyber%20killchain%27&amp;body=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f&amp;media=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f;description=La%20%27cyber%20killchain%27" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f&amp;title=La%20%27cyber%20killchain%27&amp;summary=La%20%27cyber%20killchain%27&amp;source=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f&amp;resubmit=true&amp;title=La%20%27cyber%20killchain%27" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f;title=La%20%27cyber%20killchain%27" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=La%20%27cyber%20killchain%27%20https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f&amp;t=La%20%27cyber%20killchain%27" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=La%20%27cyber%20killchain%27&amp;url=https%3a%2f%2fblog.hex-nihilo.com%2fposts%2f2020%2f11%2fla-cyber-killchain%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">PowerShell EMPIRE C2</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://blog.hex-nihilo.com/posts/2020/10/le-markdown/">
+                    <span class="button__text">Le Markdown</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+      
+        <div id="comments">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hex-nihilo" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://blog.hex-nihilo.com/">Maniac</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://blog.hex-nihilo.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span><a href="https://blog.hex-nihilo.com/about/">Mentions légales</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://blog.hex-nihilo.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3107JS3FRM', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

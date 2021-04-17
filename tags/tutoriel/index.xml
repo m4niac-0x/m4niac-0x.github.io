@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutoriel on Hex-Nihilo</title>
+    <link>https://blog.hex-nihilo.com/tags/tutoriel/</link>
+    <description>Recent content in tutoriel on Hex-Nihilo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.hex-nihilo.com/tags/tutoriel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PowerShell EMPIRE C2</title>
+      <link>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</link>
+      <pubDate>Sat, 10 Apr 2021 22:30:07 +0200</pubDate>
+      
+      <guid>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</guid>
+      <description>Disclaimer :
+Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+N’en faites pas un usage illégal.
+  Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
+    </item>
+    
+    <item>
+      <title>Le Markdown</title>
+      <link>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</link>
+      <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</guid>
+      <description>Premier article de ce blog !
+J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
+Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&amp;rsquo;en servir de recueil d’informations en même temps ;)</description>
+    </item>
+    
+  </channel>
+</rss>

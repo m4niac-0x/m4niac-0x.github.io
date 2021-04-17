@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Hex-Nihilo</title>
+    <link>https://blog.hex-nihilo.com/categories/</link>
+    <description>Recent content in Categories on Hex-Nihilo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.hex-nihilo.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cybersécurité</title>
+      <link>https://blog.hex-nihilo.com/categories/cybers%C3%A9curit%C3%A9/</link>
+      <pubDate>Sat, 10 Apr 2021 22:30:07 +0200</pubDate>
+      
+      <guid>https://blog.hex-nihilo.com/categories/cybers%C3%A9curit%C3%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Divers</title>
+      <link>https://blog.hex-nihilo.com/categories/divers/</link>
+      <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.hex-nihilo.com/categories/divers/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
