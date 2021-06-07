@@ -474,6 +474,7 @@ int pipe(int pipefd[2]);
 <th align="left">Colonne 1</th>
 <th align="center">Colonne 2</th>
 <th align="right">Colonne 3</th>
+<th>Colonne 4</th>
 </tr>
 </thead>
 <tbody>
@@ -481,11 +482,13 @@ int pipe(int pipefd[2]);
 <td align="left">Ligne 1</td>
 <td align="center">Ligne 1</td>
 <td align="right">Ligne 1</td>
+<td>Ligne 1</td>
 </tr>
 <tr>
 <td align="left">Alignée à gauche</td>
 <td align="center">Centré</td>
 <td align="right">Alignée à droite</td>
+<td>Sans alignement</td>
 </tr>
 </tbody>
 </table>
