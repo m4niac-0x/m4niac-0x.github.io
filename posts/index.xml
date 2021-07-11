@@ -15,17 +15,13 @@
             <pubDate>Sat, 10 Apr 2021 22:30:07 +0200</pubDate>
             
             <guid>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</guid>
-            <description>Disclaimer :
-Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
-N’en faites pas un usage illégal.
-  Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
-            <content type="html"><![CDATA[<hr>
-<blockquote>
-<p><strong>Disclaimer</strong> :<br>
-Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
-N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
-</blockquote>
-<hr>
+            <description>* * * **Disclaimer** :  Ce contenu sous **licence** *[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.fr &#34;CC BY-NC 4.0&#34;)* est proposé à but **éducatif**, de **recherche** et de **sécurité informatique**. N’en faites **pas** un usage **illégal**.* * *Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
+            <content type="html"><![CDATA[<meta name="twitter:card" content="summary">
+* * *
+> **Disclaimer** :  
+> Ce contenu sous **licence** *[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.fr "CC BY-NC 4.0")* est proposé à but **éducatif**, de **recherche** et de **sécurité informatique**.  
+N’en faites **pas** un usage **illégal**.
+* * *
 </br>
 
     <img src="https://blog.hex-nihilo.com/img/postsimg/empirec2/clip_image002.png"  class="center"  style="border-radius: 8px;"  />
