@@ -242,7 +242,7 @@ N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 <hr>
 <p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d'établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&quot;.</p>
 <p><img src="https://blog.hex-nihilo.com/img/postsimg/cyberkillchain/killchain.png" alt="illustration_cyberkillchain"></p>
-<p>Dans cet article de blog, il sera question de détailler ce modèle et de proposer des principes efficaces pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
+<p>Dans cet article de blog, il est question de détailler ce modèle et de proposer quelques principes pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
 <hr>
 <hr>
 <h1 id="1-reconnaissance">1. Reconnaissance</h1>
@@ -373,11 +373,11 @@ Il détient à ce stade toute latitude pour exploiter le système et y commettre
             
             <guid>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</guid>
             <description>Premier article de ce blog !
-J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
-Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&amp;rsquo;en servir de recueil d’informations en même temps ;)</description>
+Un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
+ Qu’est-ce que le Markdown ? Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&amp;hellip;
+Les extensions de fichier sont &#39;.</description>
             <content type="html"><![CDATA[<p>Premier article de ce blog !</p>
-<p>J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage <strong>Markdown</strong>. Ce langage même qui me sert a rédiger ce post !<br>
-Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&rsquo;en servir de recueil d’informations en même temps ;)</p>
+<p>Un guide du langage <strong>Markdown</strong>. Ce langage même qui me sert a rédiger ce post !</p>
 <hr>
 <h2 id="quest-ce-que-le-markdown-">Qu’est-ce que le Markdown ?</h2>
 <p>Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&hellip;<br>

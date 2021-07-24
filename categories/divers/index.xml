@@ -19,8 +19,9 @@
       
       <guid>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</guid>
       <description>Premier article de ce blog !
-J’ai eu un peu de mal à me décider sur le sujet à aborder en premier… Puis je me suis dit que ce serait très utile de commencer par un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
-Un article qui finalement représente un peu l’ambition de ce blog, à savoir, partager mes connaissances et m&amp;rsquo;en servir de recueil d’informations en même temps ;)</description>
+Un guide du langage Markdown. Ce langage même qui me sert a rédiger ce post !
+ Qu’est-ce que le Markdown ? Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&amp;hellip;
+Les extensions de fichier sont &#39;.</description>
     </item>
     
   </channel>
