@@ -189,7 +189,10 @@ Il est question de rassembler des informations, que ce soit via la reconnaissanc
 <p>Néanmoins, d’autres solutions telles que « Covenant » ont vu le jour récemment et semblent plus prometteuses en termes de fonctionnalités.</p>
 <p>PowerShell Empire C2 est un bon outil pour une première approche de l’utilisation d’un serveur de commande et de contrôle dans une opération de cybersécurité ou lors d’un audit technique.</p>
 <hr>
-<h2 id="sources-bibliographie-et-urlographie">Sources, bibliographie et urlographie ?</h2>
+<p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager sur vos réseaux ! =)</p>
+<hr>
+<hr>
+<p><em>sources</em> :</p>
 <p>Le site &amp; Git du projet « Empire » :</p>
 <ul>
 <li>
@@ -350,7 +353,7 @@ Il détient à ce stade toute latitude pour exploiter le système et y commettre
 </ul>
 <p>L’attaquant aura potentiellement déjà eu le temps de compromettre de nombreuses zones, il ne restera alors que la restauration de sauvegardes pour sauver l’infrastructure. Il est alors <strong>indispensable</strong> de mettre en amont une politique de sauvegarde résiliente à ces événements. Les sauvegardes doivent être conservées <strong>en dehors du système informatique</strong> et doivent demeurer <strong>inatteignables</strong>.</p>
 <hr>
-<p>J&rsquo;espère que cet article a plu, n&rsquo;hésitez pas à le partager sur vos réseaux et à le commenter ! =)</p>
+<p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager sur vos réseaux ! =)</p>
 <hr>
 <hr>
 <p><em>sources</em> :</p>
@@ -534,8 +537,7 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;u&gt;souligner&lt;/u&gt;
 </code></pre></div><hr>
-<p>Voilà qui est fait !<br>
-J&rsquo;espère que ce premier article vous aura été utile !</p>
+<p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager sur vos réseaux ! =)</p>
 <hr>
 <hr>
 ]]></content>
