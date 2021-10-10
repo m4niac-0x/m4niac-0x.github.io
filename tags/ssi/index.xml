@@ -6,12 +6,8 @@
     <description>Recent content in ssi on Hex-Nihilo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.hex-nihilo.com/tags/ssi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.hex-nihilo.com/tags/ssi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>La &#39;cyber killchain&#39;</title>
       <link>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</link>
@@ -19,9 +15,9 @@
       
       <guid>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</guid>
       <description>Disclaimer :
-Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+Ce contenu est proposé à but éducatif, de recherche et de sécurité informatique.
 N’en faites pas un usage illégal.
-  Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&amp;rsquo;il était possible d&#39;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en sept étapes d&amp;rsquo;une attaque réussie : la &amp;ldquo;Cyber Kill Chain&amp;quot;.</description>
+  Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&amp;rsquo;il était possible d&amp;rsquo;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en sept étapes d&amp;rsquo;une attaque réussie : la &amp;ldquo;Cyber Kill Chain&amp;rdquo;.</description>
     </item>
     
   </channel>

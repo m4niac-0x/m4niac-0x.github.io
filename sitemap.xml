@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://blog.hex-nihilo.com/fr/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://blog.hex-nihilo.com/en/sitemap.xml</loc>
-		
-	   	<lastmod>2021-04-10T22:30:07+02:00</lastmod>
-		
-	</sitemap>
-	
+  
+  <sitemap>
+    <loc>https://blog.hex-nihilo.com/fr/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://blog.hex-nihilo.com/en/sitemap.xml</loc>
+    
+      <lastmod>2021-04-10T22:30:07+02:00</lastmod>
+    
+  </sitemap>
+  
 </sitemapindex>

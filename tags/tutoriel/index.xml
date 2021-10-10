@@ -6,12 +6,8 @@
     <description>Recent content in tutoriel on Hex-Nihilo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate>
-    
-	<atom:link href="https://blog.hex-nihilo.com/tags/tutoriel/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate><atom:link href="https://blog.hex-nihilo.com/tags/tutoriel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell EMPIRE C2</title>
       <link>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</link>
@@ -19,7 +15,7 @@
       
       <guid>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</guid>
       <description>Disclaimer :
-Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+Ce contenu est proposé à but éducatif, de recherche et de sécurité informatique.
 N’en faites pas un usage illégal.
   Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
     </item>

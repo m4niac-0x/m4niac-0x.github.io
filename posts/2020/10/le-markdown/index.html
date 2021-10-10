@@ -42,14 +42,9 @@
 
 
 <meta itemprop="name" content="Le Markdown">
-<meta itemprop="description" content="Un tutoriel pour débuter avec Markdown !">
-<meta itemprop="datePublished" content="2020-10-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-10-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="794">
-<meta itemprop="image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
-
-
-
+<meta itemprop="description" content="Un tutoriel pour débuter avec Markdown !"><meta itemprop="datePublished" content="2020-10-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-10-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="792"><meta itemprop="image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
 <meta itemprop="keywords" content="markdown,tutoriel,web," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
@@ -153,7 +148,7 @@
 <hr>
 <h2 id="quest-ce-que-le-markdown-">Qu’est-ce que le Markdown ?</h2>
 <p>Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&hellip;<br>
-Les extensions de fichier sont <em>'.md&rsquo;</em> et <em>'.markdown&rsquo;</em>.<br>
+Les extensions de fichier sont <em>'.md'</em> et <em>'.markdown'</em>.<br>
 En outre, il est question d’utiliser des combinaisons de caractères pour transformer le texte. Comme <code>*italique*</code> et <code>**gras**</code> pour écrire : <em>“Le <strong>gras</strong> c’est la vie…”</em> par exemple.<br>
 J’imagine que vous avez compris un peu l’idée. Passons aux détails et tout deviendra plus clair !</p>
 <p>Vous pouvez utiliser le caractère <em>underscore</em> <code>(_)</code> ou <em>étoile</em> <code>*</code> indifféremment. C’est surtout une question de clarté du texte brut. Personnellement j’ai le reflexe d’utiliser <code>*</code> car je me sers souvent de <code>_</code> dans mes notes.<br>
@@ -172,7 +167,7 @@ C&rsquo;est parti !</p>
 <h4 id="p4">P4</h4>
 <h5 id="p5">P5</h5>
 <h6 id="p6">P6</h6>
-<pre><code># P1 (souligné)
+<pre tabindex="0"><code># P1 (souligné)
 ## P2
 ### P3
 #### P4
@@ -182,19 +177,19 @@ C&rsquo;est parti !</p>
 Pour <strong>retourner à la ligne</strong> il ne suffit pas de faire &lsquo;entrée&rsquo;, il faut aussi laisser <strong>deux espaces</strong> à la fin de la ligne précédente !</p>
 <hr>
 <h2 id="ecrire-du-code">Ecrire du code</h2>
-<p>Markdown offre la possibilité d'écrire du code de manière à ce qu&rsquo;il soit clairement identifié et non interprété.
+<p>Markdown offre la possibilité d&rsquo;écrire du code de manière à ce qu&rsquo;il soit clairement identifié et non interprété.
 Il suffit pour cela de le placer entre des <em>accents graves</em> <code>`</code> généralement AltGr+7 sur votre clavier.</p>
 <p><code>Code</code> = <code>`Code`</code></p>
-<p>Avec 3 <code>`</code> succincts vous pouvez créer des blocs de code et même préciser de quel langage il s&rsquo;agit pour la colorisation ! Pour indiquer le langage utilisé il suffit de l'écrire après les 3 premiers <code>`</code> du bloc.<br>
+<p>Avec 3 <code>`</code> succincts vous pouvez créer des blocs de code et même préciser de quel langage il s&rsquo;agit pour la colorisation ! Pour indiquer le langage utilisé il suffit de l&rsquo;écrire après les 3 premiers <code>`</code> du bloc.<br>
 Pour incorporer les <code>```</code> dans d&rsquo;autres (en mode poupées russes) il faut ajouter un <code>`</code> à chaque itération.</p>
 <p>Ainsi, ce bout de code en C :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">int</span> pipefd[<span style="color:#ae81ff">2</span>]); 
-</code></pre></div><p>s'écrit :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">```c
-#include &lt;unistd.h&gt;
-int pipe(int pipefd[2]); 
-```
+</code></pre></div><p>s&rsquo;écrit :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#e6db74">```c
+</span><span style="color:#e6db74"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">int</span> pipefd[<span style="color:#ae81ff">2</span>]); 
+<span style="color:#e6db74">```</span>
 </code></pre></div><p>Cela fonctionne aussi avec <code>bash</code>, <code>go</code>, <code>js</code>, etc&hellip;</p>
 <hr>
 <h2 id="les-listes">Les listes</h2>
@@ -211,7 +206,7 @@ int pipe(int pipefd[2]);
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">*</span> 1ère ligne
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">*</span> 1ère ligne
 <span style="color:#66d9ef">*</span> 2ème ligne
 	<span style="color:#66d9ef">*</span> 1ère ligne sous la 2ème
 		<span style="color:#66d9ef">*</span> etc... etc...
@@ -228,7 +223,7 @@ int pipe(int pipefd[2]);
 </ol>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> 1ère ligne
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> 1ère ligne
 <span style="color:#66d9ef">2.</span> 2ème ligne
 	<span style="color:#66d9ef">1.</span> 1ère ligne sous la 2ème
 		<span style="color:#66d9ef">1.</span> etc... etc...
@@ -237,7 +232,7 @@ int pipe(int pipefd[2]);
 <li><input checked="" disabled="" type="checkbox"> Élément de liste coché</li>
 <li><input disabled="" type="checkbox"> Élément de liste</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [x]</span> Élément de liste coché
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [x]</span> Élément de liste coché
 <span style="color:#66d9ef">- [ ]</span> Élément de liste
 </code></pre></div><p>Ça suit toujours ?! Alors on attaque les trucs chiants&hellip;</p>
 <hr>
@@ -246,33 +241,33 @@ int pipe(int pipefd[2]);
 <table>
 <thead>
 <tr>
-<th align="left">Colonne 1</th>
-<th align="center">Colonne 2</th>
-<th align="right">Colonne 3</th>
+<th style="text-align:left">Colonne 1</th>
+<th style="text-align:center">Colonne 2</th>
+<th style="text-align:right">Colonne 3</th>
 <th>Colonne 4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Ligne 1</td>
-<td align="center">Ligne 1</td>
-<td align="right">Ligne 1</td>
+<td style="text-align:left">Ligne 1</td>
+<td style="text-align:center">Ligne 1</td>
+<td style="text-align:right">Ligne 1</td>
 <td>Ligne 1</td>
 </tr>
 <tr>
-<td align="left">Alignée à gauche</td>
-<td align="center">Centré</td>
-<td align="right">Alignée à droite</td>
+<td style="text-align:left">Alignée à gauche</td>
+<td style="text-align:center">Centré</td>
+<td style="text-align:right">Alignée à droite</td>
 <td>Sans alignement</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">| Colonne 1        |     Colonne 2     |        Colonne 3 |        Colonne 4 |
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">| Colonne 1        |     Colonne 2     |        Colonne 3 |        Colonne 4 |
 | :--------------- | :---------------: | ---------------: | ---------------- |
 | Ligne 1          |       Ligne 1     |          Ligne 1 | Ligne 1          |
 | Alignée à gauche |       Centré      | Alignée à droite | Sans alignement  |
 </code></pre></div><p>Mais ça marche aussi comme ça :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">|Colonne 1|Colonne 2|Colonne 3|Colonne 4
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">|Colonne 1|Colonne 2|Colonne 3|Colonne 4
 |:-|:-:|-:|-
 |Ligne 1|Ligne 1|Ligne 1|Ligne 1
 |Alignée à gauche|Centré|Alignée à droite|Sans alignement
@@ -280,11 +275,11 @@ int pipe(int pipefd[2]);
 <h2 id="les-hyperliens-et-les-images">Les hyperliens et les images</h2>
 <h4 id="pour-créer-un-lien-">Pour créer un lien :</h4>
 <p><a href="https://twitter.com/m4niac_0x" title="Texte à afficher au passage de souris">Exemple de lien</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[<span style="color:#f92672">Exemple de lien</span>](<span style="color:#a6e22e">URL_de_mon_lien &#34;Texte à afficher au passage de souris&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[<span style="color:#f92672">Exemple de lien</span>](<span style="color:#a6e22e">URL_de_mon_lien &#34;Texte à afficher au passage de souris&#34;</span>)
 </code></pre></div><p>Le texte à afficher par la souris est optionnel.</p>
 <h4 id="pour-incorporer-une-image-">Pour incorporer une image :</h4>
 <p><img src="https://blog.hex-nihilo.com/img/postsimg//markdown/md.jpg" alt="Logo Markdown" title="Texte à afficher au passage de souris"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Texte en cas de problème d&#39;affichage</span>](<span style="color:#a6e22e">url_de_mon_image &#34;Texte à afficher au passage de souris&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Texte en cas de problème d&#39;affichage</span>](<span style="color:#a6e22e">url_de_mon_image &#34;Texte à afficher au passage de souris&#34;</span>)
 </code></pre></div><p>Le lien peut aussi bien être une URL qu&rsquo;un chemin local du systeme de fichiers (absolu ou relatif).<br>
 Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 <hr>
@@ -301,13 +296,13 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 <p><em>“Le <strong>gras</strong> c’est la vie…”</em><br>
 &ndash; Karadoc,  Livre II - Corpore sano</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">*“Le **gras** c’est la vie…”*  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">*“Le **gras** c’est la vie…”*  
 </span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">-- Karadoc,  Livre II - Corpore sano
 </span></code></pre></div><ul>
 <li>Vous pouvez utiliser des séparateurs comme je l&rsquo;ai fait tout au long de cette article avec <code>***</code>, <code>---</code>, <code>___</code></li>
 <li>Il n&rsquo;est, à priori, pas possible de <u>souligner</u> autrement qu&rsquo;en utilisant HTML :(</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;u&gt;souligner&lt;/u&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;<span style="color:#f92672">u</span>&gt;souligner&lt;/<span style="color:#f92672">u</span>&gt;
 </code></pre></div><hr>
 <p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager sur vos réseaux ! =)</p>
 <hr>
@@ -346,7 +341,7 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        794 Words
+        792 Words
       </p>
 
       <p>
@@ -496,7 +491,7 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
         <div class="footer__content">
             <span>&copy; 2021</span>
             <span><a href="https://blog.hex-nihilo.com/">Maniac</a></span>
-            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></span>
             <span><a href="https://blog.hex-nihilo.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
             
         </div>
@@ -518,7 +513,7 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 
 
 
-<script type="text/javascript" src="https://blog.hex-nihilo.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://blog.hex-nihilo.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

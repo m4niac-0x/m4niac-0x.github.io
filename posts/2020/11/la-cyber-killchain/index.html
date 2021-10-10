@@ -42,14 +42,9 @@
 
 
 <meta itemprop="name" content="La &#39;cyber killchain&#39;">
-<meta itemprop="description" content="Cyberattaques : Modélisation et contre-mesures">
-<meta itemprop="datePublished" content="2020-11-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-11-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1918">
-<meta itemprop="image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
-
-
-
+<meta itemprop="description" content="Cyberattaques : Modélisation et contre-mesures"><meta itemprop="datePublished" content="2020-11-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1913"><meta itemprop="image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
 <meta itemprop="keywords" content="apt,ssi,blueteam," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.hex-nihilo.com/img/HN_card.png"/>
@@ -128,7 +123,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        10 minutes
+        9 minutes
 
         
       </p>
@@ -151,11 +146,11 @@
         <hr>
 <blockquote>
 <p><strong>Disclaimer</strong> :<br>
-Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+Ce contenu est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
 N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 </blockquote>
 <hr>
-<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d'établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&quot;.</p>
+<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d&rsquo;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&rdquo;.</p>
 <p><img src="https://blog.hex-nihilo.com/img/postsimg/cyberkillchain/killchain.png" alt="illustration_cyberkillchain"></p>
 <p>Dans cet article de blog, il est question de détailler ce modèle et de proposer quelques principes pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
 <hr>
@@ -167,7 +162,7 @@ N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 <p>Quand l&rsquo;attaquant estime avoir collecté suffisamment d&rsquo;information, il entame une phase de reconnaissance <strong>active</strong>.<br>
 Il est désormais question de délimiter le périmètre du système d&rsquo;information (SI), ce même périmètre qui s’avère être de plus en plus « poreux » au fur et à mesure des évolutions dans la façon où les utilisateurs interagissent avec le SI, notamment via les accès « nomades » et des services hébergés. Autant de faiblesses susceptibles d’être exploitées.<br>
 L&rsquo;attaquant va rechercher les ports et services ouverts sur le réseau avec des outils de scans de ports ou de vulnérabilités. Certains de ces outils, notamment les scanners de vulnérabilités, sont susceptibles de laisser des traces.<br>
-La reconnaissance active peut alors durer de nombreux mois pour éviter d'être détecté.</p>
+La reconnaissance active peut alors durer de nombreux mois pour éviter d&rsquo;être détecté.</p>
 <p>Se défendre contre la reconnaissance nécessite une chose fondamentale : il faut parfaitement connaitre son réseau. Il y a une différence entre ce que les gens pensent utiliser dans leur réseau et les services qui y sont réellement actifs. L’attaquant va rechercher des traces externes laissées par des outils internes qui tournent parfois à l’insu des administrateurs. Ils servent généralement à automatiser certaines taches ou pour les besoins des propriétaires de logiciels. Ces services sont autant de vulnérabilités potentielles de l’infrastructure.<br>
 Il est nécessaire pour les administrateurs de connaitre toutes les fonctionnalités et de savoir configurer correctement leurs outils. Le but étant toujours, in fine, de <strong>réduire la surface d’attaque</strong>.<br>
 Pour ce faire il est nécessaire de retirer toutes les choses qui ne sont pas ou plus utilisées et de faire faire auditer son infrastructure (pentest, redteam, etc&hellip;). Il faut attaquer son périmètre comme le ferait un adversaire réel !<br>
@@ -178,7 +173,7 @@ Un réseau bien géré rend difficile la collecte d’informations. Cette bonne 
 <p>Les failles volontairement ignorées sont autant d’opportunités laissées aux attaquants. Et il en va de même pour l’ouverture temporaire d’accès extérieurs sur des ressources internes protégées. Les groupes APT (Advanced Persistent Threat) maintiennent une surveillance permanente pour détecter toute exposition, même temporaire, du système informatique de leur cible.</p>
 <p>Techniquement parlant, les pots de miel (honeypots) sont d&rsquo;excellents outils qui peuvent être utilisés comme un leurre contre un agresseur potentiel. Non seulement ils détournent l&rsquo;attention des systèmes réels, mais ils révèlent aussi ce qu&rsquo;ils cherchent et parfois qui ils sont.<br>
 Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périmètre assurera le filtrage et la segmentation, tout en surveillant les scans de ports et le &lsquo;banner grabbing&rsquo;. La plupart des pare-feu de nouvelle génération (NGFW) peuvent bloquer les connexions des réseaux Tor et des proxy IP connus qui sont couramment utilisés durant cette phase.</p>
-<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l'étape suivante.</p>
+<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l&rsquo;étape suivante.</p>
 <hr>
 <hr>
 <h1 id="2-weaponization">2. Weaponization</h1>
@@ -202,11 +197,11 @@ Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périm�
 <hr>
 <h1 id="3-delivery">3. Delivery</h1>
 <p>But recherché : <em>Livrer la charge utile dans le SI</em></p>
-<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l'étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
+<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l&rsquo;étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
 <p>Voici quelques exemples :<br>
 - Un site web compromis ;<br>
 - Une interaction avec une ressource du SI exposée sur internet ;<br>
-- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering&rsquo; pour obtenir un accès interne illégitime ;<br>
+- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering' pour obtenir un accès interne illégitime ;<br>
 - Le hameçonnage d&rsquo;un employé sur les réseaux sociaux ;<br>
 - Par support USB. L&rsquo;attaque consiste à abandonner une clé USB infectée dans l&rsquo;espoir qu&rsquo;un employé trop curieux la branche sur le SI interne.</p>
 <p>Il faut bien tenir compte du fait qu&rsquo;une entreprise peut disposer des meilleurs experts en cybersécurité, si elle ne forme pas ses employés elle s’expose à une compromission depuis le poste d’un utilisateur. Il ne faut pas négliger ces derniers et mettre en place des <strong>politiques sur les mots de passe</strong> et sur les <strong>bonnes pratiques de la SSI</strong>.</p>
@@ -241,7 +236,7 @@ Cela se fait par la mise en place d&rsquo;une porte dérobée (backdoor) permett
 <p>Le saint graal ce sont les droits d&rsquo;administrateur (ou &lsquo;root&rsquo;).</p>
 </blockquote>
 <p>La meilleure contremesure consiste à ne pas attribuer de droits permissifs à tous les utilisateurs. Un compte ne doit détenir que les droits dont il a besoin.</p>
-<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l'étape précédente, son accès est persistant.<br>
+<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l&rsquo;étape précédente, son accès est persistant.<br>
 Il va maintenant tenter d’installer des outils lui permettant de gagner des accès ou d’automatiser des taches. Pour ce faire il va généralement essayer de <strong>contacter un serveur externe</strong> via un nom de domaine. Celui-ci est potentiellement identifiable à l’aide de bases connues, pour peu que l’on surveille les flux.</p>
 <p>Encore et toujours, l’application des correctifs de sécurité et une action stratégique dans la défense de l’infrastructure, tant dans son périmètre extérieur que pour les systèmes qui le compose.</p>
 <p>Pour atteindre son objectif, l’adversaire devra peut-être avoir besoin de se déplacer sur le réseau, cela s’appelle un <strong>&lsquo;mouvement latéral&rsquo;</strong> ou un <strong>&lsquo;pivot&rsquo;</strong>. La meilleure barrière réside dans la bonne gestion du réseau notamment dans sa segmentation. Certaines zones et certaines machines ne doivent pas se côtoyer ni même être accessible l’une de l’autre, de manière logique ou physique.</p>
@@ -312,7 +307,7 @@ Il détient à ce stade toute latitude pour exploiter le système et y commettre
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1918 Words
+        1913 Words
       </p>
 
       <p>
@@ -469,7 +464,7 @@ Il détient à ce stade toute latitude pour exploiter le système et y commettre
         <div class="footer__content">
             <span>&copy; 2021</span>
             <span><a href="https://blog.hex-nihilo.com/">Maniac</a></span>
-            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></span>
             <span><a href="https://blog.hex-nihilo.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
             
         </div>
@@ -491,7 +486,7 @@ Il détient à ce stade toute latitude pour exploiter le système et y commettre
 
 
 
-<script type="text/javascript" src="https://blog.hex-nihilo.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://blog.hex-nihilo.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

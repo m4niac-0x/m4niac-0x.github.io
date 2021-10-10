@@ -6,12 +6,8 @@
     <description>Recent content in Divers on Hex-Nihilo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.hex-nihilo.com/categories/divers/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.hex-nihilo.com/categories/divers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Le Markdown</title>
       <link>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</link>

@@ -5,7 +5,7 @@
         <description>Recent content in Posts on Hex-Nihilo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>fr-fr</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Sat, 10 Apr 2021 22:30:07 +0200</lastBuildDate>
         <atom:link href="https://blog.hex-nihilo.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -16,13 +16,13 @@
             
             <guid>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</guid>
             <description>Disclaimer :
-Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+Ce contenu est proposé à but éducatif, de recherche et de sécurité informatique.
 N’en faites pas un usage illégal.
   Introduction Rendu public en 2015, PowerShell Empire est un outil de sécurité informatique pouvant être utilisé lors des audits techniques de cybersécurité. A titre indicatif, son usage s’avère particulièrement pertinent au cours de la phase 6 ‘Command &amp;amp; Control’ de la cyber-killchain de Lockheed Martin.</description>
             <content type="html"><![CDATA[<hr>
 <blockquote>
 <p><strong>Disclaimer</strong> :<br>
-Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+Ce contenu est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
 N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 </blockquote>
 <hr>
@@ -230,17 +230,17 @@ Il est question de rassembler des informations, que ce soit via la reconnaissanc
             
             <guid>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</guid>
             <description>Disclaimer :
-Ce contenu sous licence CC BY-NC 4.0 est proposé à but éducatif, de recherche et de sécurité informatique.
+Ce contenu est proposé à but éducatif, de recherche et de sécurité informatique.
 N’en faites pas un usage illégal.
-  Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&amp;rsquo;il était possible d&#39;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en sept étapes d&amp;rsquo;une attaque réussie : la &amp;ldquo;Cyber Kill Chain&amp;quot;.</description>
+  Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&amp;rsquo;il était possible d&amp;rsquo;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en sept étapes d&amp;rsquo;une attaque réussie : la &amp;ldquo;Cyber Kill Chain&amp;rdquo;.</description>
             <content type="html"><![CDATA[<hr>
 <blockquote>
 <p><strong>Disclaimer</strong> :<br>
-Ce contenu sous <strong>licence</strong> <em><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" title="CC BY-NC 4.0">CC BY-NC 4.0</a></em> est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
+Ce contenu est proposé à but <strong>éducatif</strong>, de <strong>recherche</strong> et de <strong>sécurité informatique</strong>.<br>
 N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 </blockquote>
 <hr>
-<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d'établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&quot;.</p>
+<p>Depuis quelques années déjà, plusieurs acteurs de la cybersécurité se sont posés la question de savoir s&rsquo;il était possible d&rsquo;établir un modèle générique pour définir les cyberattaques. En 2011, la société Lockheed Martin a publié un modèle en <strong>sept étapes</strong> d&rsquo;une attaque réussie : la &ldquo;<strong>Cyber Kill Chain</strong>&rdquo;.</p>
 <p><img src="https://blog.hex-nihilo.com/img/postsimg/cyberkillchain/killchain.png" alt="illustration_cyberkillchain"></p>
 <p>Dans cet article de blog, il est question de détailler ce modèle et de proposer quelques principes pour nuire et perturber les attaquants cherchant à compromettre un réseau informatique.</p>
 <hr>
@@ -252,7 +252,7 @@ N’en faites <strong>pas</strong> un usage <strong>illégal</strong>.</p>
 <p>Quand l&rsquo;attaquant estime avoir collecté suffisamment d&rsquo;information, il entame une phase de reconnaissance <strong>active</strong>.<br>
 Il est désormais question de délimiter le périmètre du système d&rsquo;information (SI), ce même périmètre qui s’avère être de plus en plus « poreux » au fur et à mesure des évolutions dans la façon où les utilisateurs interagissent avec le SI, notamment via les accès « nomades » et des services hébergés. Autant de faiblesses susceptibles d’être exploitées.<br>
 L&rsquo;attaquant va rechercher les ports et services ouverts sur le réseau avec des outils de scans de ports ou de vulnérabilités. Certains de ces outils, notamment les scanners de vulnérabilités, sont susceptibles de laisser des traces.<br>
-La reconnaissance active peut alors durer de nombreux mois pour éviter d'être détecté.</p>
+La reconnaissance active peut alors durer de nombreux mois pour éviter d&rsquo;être détecté.</p>
 <p>Se défendre contre la reconnaissance nécessite une chose fondamentale : il faut parfaitement connaitre son réseau. Il y a une différence entre ce que les gens pensent utiliser dans leur réseau et les services qui y sont réellement actifs. L’attaquant va rechercher des traces externes laissées par des outils internes qui tournent parfois à l’insu des administrateurs. Ils servent généralement à automatiser certaines taches ou pour les besoins des propriétaires de logiciels. Ces services sont autant de vulnérabilités potentielles de l’infrastructure.<br>
 Il est nécessaire pour les administrateurs de connaitre toutes les fonctionnalités et de savoir configurer correctement leurs outils. Le but étant toujours, in fine, de <strong>réduire la surface d’attaque</strong>.<br>
 Pour ce faire il est nécessaire de retirer toutes les choses qui ne sont pas ou plus utilisées et de faire faire auditer son infrastructure (pentest, redteam, etc&hellip;). Il faut attaquer son périmètre comme le ferait un adversaire réel !<br>
@@ -263,7 +263,7 @@ Un réseau bien géré rend difficile la collecte d’informations. Cette bonne 
 <p>Les failles volontairement ignorées sont autant d’opportunités laissées aux attaquants. Et il en va de même pour l’ouverture temporaire d’accès extérieurs sur des ressources internes protégées. Les groupes APT (Advanced Persistent Threat) maintiennent une surveillance permanente pour détecter toute exposition, même temporaire, du système informatique de leur cible.</p>
 <p>Techniquement parlant, les pots de miel (honeypots) sont d&rsquo;excellents outils qui peuvent être utilisés comme un leurre contre un agresseur potentiel. Non seulement ils détournent l&rsquo;attention des systèmes réels, mais ils révèlent aussi ce qu&rsquo;ils cherchent et parfois qui ils sont.<br>
 Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périmètre assurera le filtrage et la segmentation, tout en surveillant les scans de ports et le &lsquo;banner grabbing&rsquo;. La plupart des pare-feu de nouvelle génération (NGFW) peuvent bloquer les connexions des réseaux Tor et des proxy IP connus qui sont couramment utilisés durant cette phase.</p>
-<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l'étape suivante.</p>
+<p>Le but de la phase de reconnaissance est de trouver une faiblesse qui peut être exploitée. Une fois que l&rsquo;attaquant a trouvé cette faiblesse, il peut passer à l&rsquo;étape suivante.</p>
 <hr>
 <hr>
 <h1 id="2-weaponization">2. Weaponization</h1>
@@ -287,11 +287,11 @@ Un pare-feu avec des capacités IPS (Intrusion Prevention System) sur le périm�
 <hr>
 <h1 id="3-delivery">3. Delivery</h1>
 <p>But recherché : <em>Livrer la charge utile dans le SI</em></p>
-<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l'étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
+<p>Détenteur de la charge adéquat en fonction du résultat de la reconnaissance antérieure, l&rsquo;étape de livraison consiste à essayer une ou plusieurs voies pour <strong>livrer</strong> le code malveillant. Cette livraison varie selon le type d&rsquo;attaque.</p>
 <p>Voici quelques exemples :<br>
 - Un site web compromis ;<br>
 - Une interaction avec une ressource du SI exposée sur internet ;<br>
-- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering&rsquo; pour obtenir un accès interne illégitime ;<br>
+- Un phishing e-mail avec pièce-jointe ou une attaque ciblée (spire phishing) en pratiquant le social-engineering' pour obtenir un accès interne illégitime ;<br>
 - Le hameçonnage d&rsquo;un employé sur les réseaux sociaux ;<br>
 - Par support USB. L&rsquo;attaque consiste à abandonner une clé USB infectée dans l&rsquo;espoir qu&rsquo;un employé trop curieux la branche sur le SI interne.</p>
 <p>Il faut bien tenir compte du fait qu&rsquo;une entreprise peut disposer des meilleurs experts en cybersécurité, si elle ne forme pas ses employés elle s’expose à une compromission depuis le poste d’un utilisateur. Il ne faut pas négliger ces derniers et mettre en place des <strong>politiques sur les mots de passe</strong> et sur les <strong>bonnes pratiques de la SSI</strong>.</p>
@@ -326,7 +326,7 @@ Cela se fait par la mise en place d&rsquo;une porte dérobée (backdoor) permett
 <p>Le saint graal ce sont les droits d&rsquo;administrateur (ou &lsquo;root&rsquo;).</p>
 </blockquote>
 <p>La meilleure contremesure consiste à ne pas attribuer de droits permissifs à tous les utilisateurs. Un compte ne doit détenir que les droits dont il a besoin.</p>
-<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l'étape précédente, son accès est persistant.<br>
+<p>À ce stade, le système est complètement compromis et sous le contrôle de l&rsquo;agresseur. S&rsquo;il a correctement effectué l&rsquo;étape précédente, son accès est persistant.<br>
 Il va maintenant tenter d’installer des outils lui permettant de gagner des accès ou d’automatiser des taches. Pour ce faire il va généralement essayer de <strong>contacter un serveur externe</strong> via un nom de domaine. Celui-ci est potentiellement identifiable à l’aide de bases connues, pour peu que l’on surveille les flux.</p>
 <p>Encore et toujours, l’application des correctifs de sécurité et une action stratégique dans la défense de l’infrastructure, tant dans son périmètre extérieur que pour les systèmes qui le compose.</p>
 <p>Pour atteindre son objectif, l’adversaire devra peut-être avoir besoin de se déplacer sur le réseau, cela s’appelle un <strong>&lsquo;mouvement latéral&rsquo;</strong> ou un <strong>&lsquo;pivot&rsquo;</strong>. La meilleure barrière réside dans la bonne gestion du réseau notamment dans sa segmentation. Certaines zones et certaines machines ne doivent pas se côtoyer ni même être accessible l’une de l’autre, de manière logique ou physique.</p>
@@ -381,7 +381,7 @@ Les extensions de fichier sont &#39;.</description>
 <hr>
 <h2 id="quest-ce-que-le-markdown-">Qu’est-ce que le Markdown ?</h2>
 <p>Il s’agit d’un langage créé en 2004 ayant (enfin) pour but de lire et d’écrire des documents balisés en s’affranchissant de la lourdeur du langage HTML ou BBCODE. On le retrouve un peu partout désormais, par exemple sur Github, Discord, etc&hellip;<br>
-Les extensions de fichier sont <em>'.md&rsquo;</em> et <em>'.markdown&rsquo;</em>.<br>
+Les extensions de fichier sont <em>'.md'</em> et <em>'.markdown'</em>.<br>
 En outre, il est question d’utiliser des combinaisons de caractères pour transformer le texte. Comme <code>*italique*</code> et <code>**gras**</code> pour écrire : <em>“Le <strong>gras</strong> c’est la vie…”</em> par exemple.<br>
 J’imagine que vous avez compris un peu l’idée. Passons aux détails et tout deviendra plus clair !</p>
 <p>Vous pouvez utiliser le caractère <em>underscore</em> <code>(_)</code> ou <em>étoile</em> <code>*</code> indifféremment. C’est surtout une question de clarté du texte brut. Personnellement j’ai le reflexe d’utiliser <code>*</code> car je me sers souvent de <code>_</code> dans mes notes.<br>
@@ -400,7 +400,7 @@ C&rsquo;est parti !</p>
 <h4 id="p4">P4</h4>
 <h5 id="p5">P5</h5>
 <h6 id="p6">P6</h6>
-<pre><code># P1 (souligné)
+<pre tabindex="0"><code># P1 (souligné)
 ## P2
 ### P3
 #### P4
@@ -410,19 +410,19 @@ C&rsquo;est parti !</p>
 Pour <strong>retourner à la ligne</strong> il ne suffit pas de faire &lsquo;entrée&rsquo;, il faut aussi laisser <strong>deux espaces</strong> à la fin de la ligne précédente !</p>
 <hr>
 <h2 id="ecrire-du-code">Ecrire du code</h2>
-<p>Markdown offre la possibilité d'écrire du code de manière à ce qu&rsquo;il soit clairement identifié et non interprété.
+<p>Markdown offre la possibilité d&rsquo;écrire du code de manière à ce qu&rsquo;il soit clairement identifié et non interprété.
 Il suffit pour cela de le placer entre des <em>accents graves</em> <code>`</code> généralement AltGr+7 sur votre clavier.</p>
 <p><code>Code</code> = <code>`Code`</code></p>
-<p>Avec 3 <code>`</code> succincts vous pouvez créer des blocs de code et même préciser de quel langage il s&rsquo;agit pour la colorisation ! Pour indiquer le langage utilisé il suffit de l'écrire après les 3 premiers <code>`</code> du bloc.<br>
+<p>Avec 3 <code>`</code> succincts vous pouvez créer des blocs de code et même préciser de quel langage il s&rsquo;agit pour la colorisation ! Pour indiquer le langage utilisé il suffit de l&rsquo;écrire après les 3 premiers <code>`</code> du bloc.<br>
 Pour incorporer les <code>```</code> dans d&rsquo;autres (en mode poupées russes) il faut ajouter un <code>`</code> à chaque itération.</p>
 <p>Ainsi, ce bout de code en C :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">int</span> pipefd[<span style="color:#ae81ff">2</span>]); 
-</code></pre></div><p>s'écrit :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">```c
-#include &lt;unistd.h&gt;
-int pipe(int pipefd[2]); 
-```
+</code></pre></div><p>s&rsquo;écrit :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#e6db74">```c
+</span><span style="color:#e6db74"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">int</span> pipefd[<span style="color:#ae81ff">2</span>]); 
+<span style="color:#e6db74">```</span>
 </code></pre></div><p>Cela fonctionne aussi avec <code>bash</code>, <code>go</code>, <code>js</code>, etc&hellip;</p>
 <hr>
 <h2 id="les-listes">Les listes</h2>
@@ -439,7 +439,7 @@ int pipe(int pipefd[2]);
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">*</span> 1ère ligne
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">*</span> 1ère ligne
 <span style="color:#66d9ef">*</span> 2ème ligne
 	<span style="color:#66d9ef">*</span> 1ère ligne sous la 2ème
 		<span style="color:#66d9ef">*</span> etc... etc...
@@ -456,7 +456,7 @@ int pipe(int pipefd[2]);
 </ol>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> 1ère ligne
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> 1ère ligne
 <span style="color:#66d9ef">2.</span> 2ème ligne
 	<span style="color:#66d9ef">1.</span> 1ère ligne sous la 2ème
 		<span style="color:#66d9ef">1.</span> etc... etc...
@@ -465,7 +465,7 @@ int pipe(int pipefd[2]);
 <li><input checked="" disabled="" type="checkbox"> Élément de liste coché</li>
 <li><input disabled="" type="checkbox"> Élément de liste</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [x]</span> Élément de liste coché
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [x]</span> Élément de liste coché
 <span style="color:#66d9ef">- [ ]</span> Élément de liste
 </code></pre></div><p>Ça suit toujours ?! Alors on attaque les trucs chiants&hellip;</p>
 <hr>
@@ -474,33 +474,33 @@ int pipe(int pipefd[2]);
 <table>
 <thead>
 <tr>
-<th align="left">Colonne 1</th>
-<th align="center">Colonne 2</th>
-<th align="right">Colonne 3</th>
+<th style="text-align:left">Colonne 1</th>
+<th style="text-align:center">Colonne 2</th>
+<th style="text-align:right">Colonne 3</th>
 <th>Colonne 4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Ligne 1</td>
-<td align="center">Ligne 1</td>
-<td align="right">Ligne 1</td>
+<td style="text-align:left">Ligne 1</td>
+<td style="text-align:center">Ligne 1</td>
+<td style="text-align:right">Ligne 1</td>
 <td>Ligne 1</td>
 </tr>
 <tr>
-<td align="left">Alignée à gauche</td>
-<td align="center">Centré</td>
-<td align="right">Alignée à droite</td>
+<td style="text-align:left">Alignée à gauche</td>
+<td style="text-align:center">Centré</td>
+<td style="text-align:right">Alignée à droite</td>
 <td>Sans alignement</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">| Colonne 1        |     Colonne 2     |        Colonne 3 |        Colonne 4 |
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">| Colonne 1        |     Colonne 2     |        Colonne 3 |        Colonne 4 |
 | :--------------- | :---------------: | ---------------: | ---------------- |
 | Ligne 1          |       Ligne 1     |          Ligne 1 | Ligne 1          |
 | Alignée à gauche |       Centré      | Alignée à droite | Sans alignement  |
 </code></pre></div><p>Mais ça marche aussi comme ça :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">|Colonne 1|Colonne 2|Colonne 3|Colonne 4
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">|Colonne 1|Colonne 2|Colonne 3|Colonne 4
 |:-|:-:|-:|-
 |Ligne 1|Ligne 1|Ligne 1|Ligne 1
 |Alignée à gauche|Centré|Alignée à droite|Sans alignement
@@ -508,11 +508,11 @@ int pipe(int pipefd[2]);
 <h2 id="les-hyperliens-et-les-images">Les hyperliens et les images</h2>
 <h4 id="pour-créer-un-lien-">Pour créer un lien :</h4>
 <p><a href="https://twitter.com/m4niac_0x" title="Texte à afficher au passage de souris">Exemple de lien</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[<span style="color:#f92672">Exemple de lien</span>](<span style="color:#a6e22e">URL_de_mon_lien &#34;Texte à afficher au passage de souris&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[<span style="color:#f92672">Exemple de lien</span>](<span style="color:#a6e22e">URL_de_mon_lien &#34;Texte à afficher au passage de souris&#34;</span>)
 </code></pre></div><p>Le texte à afficher par la souris est optionnel.</p>
 <h4 id="pour-incorporer-une-image-">Pour incorporer une image :</h4>
 <p><img src="https://blog.hex-nihilo.com/img/postsimg//markdown/md.jpg" alt="Logo Markdown" title="Texte à afficher au passage de souris"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Texte en cas de problème d&#39;affichage</span>](<span style="color:#a6e22e">url_de_mon_image &#34;Texte à afficher au passage de souris&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Texte en cas de problème d&#39;affichage</span>](<span style="color:#a6e22e">url_de_mon_image &#34;Texte à afficher au passage de souris&#34;</span>)
 </code></pre></div><p>Le lien peut aussi bien être une URL qu&rsquo;un chemin local du systeme de fichiers (absolu ou relatif).<br>
 Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 <hr>
@@ -529,13 +529,13 @@ Tout comme l&rsquo;image, le texte à afficher par la souris est optionnel.</p>
 <p><em>“Le <strong>gras</strong> c’est la vie…”</em><br>
 &ndash; Karadoc,  Livre II - Corpore sano</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">*“Le **gras** c’est la vie…”*  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">*“Le **gras** c’est la vie…”*  
 </span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">-- Karadoc,  Livre II - Corpore sano
 </span></code></pre></div><ul>
 <li>Vous pouvez utiliser des séparateurs comme je l&rsquo;ai fait tout au long de cette article avec <code>***</code>, <code>---</code>, <code>___</code></li>
 <li>Il n&rsquo;est, à priori, pas possible de <u>souligner</u> autrement qu&rsquo;en utilisant HTML :(</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;u&gt;souligner&lt;/u&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">&lt;<span style="color:#f92672">u</span>&gt;souligner&lt;/<span style="color:#f92672">u</span>&gt;
 </code></pre></div><hr>
 <p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager sur vos réseaux ! =)</p>
 <hr>

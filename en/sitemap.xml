@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://blog.hex-nihilo.com/tags/audit/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/categories/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
     <xhtml:link
@@ -20,14 +17,10 @@
                 hreflang="en"
                 href="https://blog.hex-nihilo.com/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/categories/cybers%C3%A9curit%C3%A9/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
     <xhtml:link
@@ -40,24 +33,16 @@
                 hreflang="en"
                 href="https://blog.hex-nihilo.com/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/posts/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/posts/2021/04/powershell-empire-c2/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/redteam/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
     <xhtml:link
@@ -70,55 +55,34 @@
                 hreflang="en"
                 href="https://blog.hex-nihilo.com/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/tutoriel/</loc>
     <lastmod>2021-04-10T22:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/apt/</loc>
     <lastmod>2020-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/blueteam/</loc>
     <lastmod>2020-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/posts/2020/11/la-cyber-killchain/</loc>
     <lastmod>2020-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/ssi/</loc>
     <lastmod>2020-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/categories/divers/</loc>
     <lastmod>2020-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/posts/2020/10/le-markdown/</loc>
     <lastmod>2020-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/markdown/</loc>
     <lastmod>2020-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/tags/web/</loc>
     <lastmod>2020-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.hex-nihilo.com/about/</loc>
   </url>
-  
 </urlset>
